@@ -1,0 +1,61 @@
+/* .header-white {
+    background-color: rgba(#bd3a3a, .96);
+} */
+
+.container-images {
+  /* Establece el tamaño del contenedor para pantallas de PC */
+  height: 60vh; /* 60% del alto total de la pantalla */
+  width: 80vw; /* 80% del ancho total de la pantalla */
+  display: flex; /* Organiza los componentes hijos de manera horizontal */
+  flex-direction: column; /* Asegura que los hijos se organicen horizontalmente */
+  overflow: auto; /* Permite desplazamiento si los hijos exceden el tamaño del contenedor */
+  justify-content: flex-start; /* Centra los hijos horizontalmente */
+  align-items: center; /* Centra los hijos verticalmente */
+
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .container-images {
+    height: 90vh; /* 90% del alto total de la pantalla */
+    width: 95vw; /* 95% del ancho total de la pantalla */
+    flex-direction: column; /* Organiza los componentes hijos de manera vertical */
+  }
+}
+
+.container-slider {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-images img {
+    /* height: 100%; */
+    width: 20%;
+}
+
+.scroll-styles {
+    scrollbar-width: none; /* Oculta el scrollbar en Firefox */
+    scroll-snap-type: proximity; /* Establece el tipo de desplazamiento */
+}
+/* img {
+    view-timeline-name: --reveal;
+    animation-name: show;
+    animation-fill-mode: both;
+    animation-timeline: --reveal;
+    animation-range: entry 25% cover 50%;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 10%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+} */
