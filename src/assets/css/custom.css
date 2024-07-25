@@ -3,15 +3,16 @@
 } */
 
 .container-images {
-  /* Establece el tamaño del contenedor para pantallas de PC */
-  height: 60vh; /* 60% del alto total de la pantalla */
-  width: 80vw; /* 80% del ancho total de la pantalla */
-  display: flex; /* Organiza los componentes hijos de manera horizontal */
-  flex-direction: column; /* Asegura que los hijos se organicen horizontalmente */
-  overflow: auto; /* Permite desplazamiento si los hijos exceden el tamaño del contenedor */
-  justify-content: flex-start; /* Centra los hijos horizontalmente */
-  align-items: center; /* Centra los hijos verticalmente */
-
+    /* Establece el tamaño del contenedor para pantallas de PC */
+    height: 60vh; /* 60% del alto total de la pantalla */
+    width: 80vw; /* 80% del ancho total de la pantalla */
+    display: flex; /* Organiza los componentes hijos de manera horizontal */
+    flex-direction: row; /* Asegura que los hijos se organicen horizontalmente */
+    overflow: auto; /* Permite desplazamiento si los hijos exceden el tamaño del contenedor */
+    justify-content: center; /* Centra los hijos horizontalmente */
+    align-items: center; /* Centra los hijos verticalmente */
+    gap: 20px; /* Espacio entre los hijos */
+    background-color: blue;
 }
 
 /* Media query para dispositivos móviles */
@@ -29,11 +30,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .container-images img {
-    /* height: 100%; */
-    width: 20%;
+    height: 100%;
+    /* width: 20%; */
 }
 
 .scroll-styles {
