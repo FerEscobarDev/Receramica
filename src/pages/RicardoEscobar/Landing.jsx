@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { LandingSlider, WhiteNavbar } from "../components";
-
+import { LandingSlider, WhiteNavbar } from "../../components";
 
 
 export const Landing = () => {

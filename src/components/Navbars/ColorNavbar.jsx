@@ -214,7 +214,7 @@ export const ColorNavbar = () => {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem>
+              {/* <NavItem>
                 <Button
                   className="btn-round"
                   color="danger"
@@ -223,7 +223,7 @@ export const ColorNavbar = () => {
                 >
                   <i className="nc-icon nc-cart-simple" /> Buy Now
                 </Button>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Container>

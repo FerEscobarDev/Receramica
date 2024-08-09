@@ -5,10 +5,7 @@ import { App } from './App.jsx'
 
 import "./assets/css/custom.css";
 import "./assets/css/bootstrap.min.css";
-import "./assets/scss/paper-kit.scss";
-import "./assets/demo/demo.css";
-import "./assets/demo/react-demo.css";
-
+import "./assets/css/receramica.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

@@ -12,11 +12,14 @@ import balmain_runway from '@/assets/img/ecommerce/balmain_runway.jpg';
 import miguel_perales from '@/assets/img/sections/miguel-perales.jpg';
 import roger_keller from '@/assets/img/sections/roger-keller.jpg';
 import joshua_earlesz from '@/assets/img/sections/joshua-earlesz.jpg';
+import gerrit_vermeulen from '@/assets/img/sections/gerrit-vermeulen.jpg';
 
 
 import ayo_ogunseinde_2 from '@/assets/img/faces/ayo-ogunseinde-2.jpg';
 import kaci_baum_2 from '@/assets/img/faces/kaci-baum-2.jpg';
 import erik_lucatero_2 from '@/assets/img/faces/erik-lucatero-2.jpg';
+
+
 
 
 export {
@@ -32,6 +35,7 @@ export {
     miguel_perales,
     roger_keller,
     joshua_earlesz,
+    gerrit_vermeulen,
     ayo_ogunseinde_2,
     kaci_baum_2,
     erik_lucatero_2,
