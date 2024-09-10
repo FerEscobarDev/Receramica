@@ -1,233 +1,153 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 // reactstrap components
 import {
-  Button,
-  Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  Nav,
-  Container,
-  UncontrolledTooltip,
+	Button,
+	Collapse,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+	UncontrolledDropdown,
+	NavbarBrand,
+	Navbar,
+	NavItem,
+	Nav,
+	Container,
+	UncontrolledTooltip,
+	Row,
+	Col,
 } from "reactstrap";
+import { logoHorizontalBlanco, logoHorizontalNegro } from "../../assets/imgRicardoEscobar";
 // core components
 
 export const ColorNavbar = () => {
-  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
-  const [bodyClick, setBodyClick] = useState(false);
-  const [collapseOpen, setCollapseOpen] = useState(false);
-  useEffect(() => {
-    let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
-    headroom.init();
-    const updateNavbarColor = () => {
-      if (
-        document.documentElement.scrollTop > 499 ||
-        document.body.scrollTop > 499
-      ) {
-        setNavbarColor("");
-      } else if (
-        document.documentElement.scrollTop < 500 ||
-        document.body.scrollTop < 500
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
-    };
-    window.addEventListener("scroll", updateNavbarColor);
-    return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
-    };
-  });
-  return (
-    <>
-      {bodyClick ? (
-        <div
-          id="bodyClick"
-          onClick={() => {
-            document.documentElement.classList.toggle("nav-open");
-            setBodyClick(false);
-            setCollapseOpen(false);
-          }}
-        />
-      ) : null}
-      <Navbar
-        className={classnames("fixed-top", navbarColor)}
-        expand="lg"
-        id="navbar-main"
-      >
-        <Container>
-          <div className="navbar-translate">
-            <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
-              Paper Kit PRO React
-            </NavbarBrand>
-            <UncontrolledTooltip placement="bottom" target="navbar-brand">
-              Paper Kit PRO React
-            </UncontrolledTooltip>
-            <button
-              className="navbar-toggler"
-              id="navigation"
-              type="button"
-              onClick={() => {
-                document.documentElement.classList.toggle("nav-open");
-                setBodyClick(true);
-                setCollapseOpen(true);
-              }}
-            >
-              <span className="navbar-toggler-bar bar1" />
-              <span className="navbar-toggler-bar bar2" />
-              <span className="navbar-toggler-bar bar3" />
-            </button>
-          </div>
-          <Collapse navbar isOpen={collapseOpen}>
-            <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Components
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-danger" right>
-                  <DropdownItem to="/index" tag={Link}>
-                    All Components
-                  </DropdownItem>
-                  <DropdownItem to="/presentation" tag={Link}>
-                    Presentation
-                  </DropdownItem>
-                  <DropdownItem
-                    href="https://demos.creative-tim.com/paper-kit-pro-react/#/documentation/introduction?ref=pkpr-color-navbar"
-                    target="_blank"
-                  >
-                    Documentation
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Sections
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-danger" right>
-                  <DropdownItem to="/sections#headers" tag={Link}>
-                    <i className="nc-icon nc-tile-56" />
-                    Headers
-                  </DropdownItem>
-                  <DropdownItem to="/sections#features" tag={Link}>
-                    <i className="nc-icon nc-settings" />
-                    Features
-                  </DropdownItem>
-                  <DropdownItem to="/sections#blogs" tag={Link}>
-                    <i className="nc-icon nc-bullet-list-67" />
-                    Blogs
-                  </DropdownItem>
-                  <DropdownItem to="/sections#teams" tag={Link}>
-                    <i className="nc-icon nc-single-02" />
-                    Teams
-                  </DropdownItem>
-                  <DropdownItem to="/sections#projects" tag={Link}>
-                    <i className="nc-icon nc-calendar-60" />
-                    Projects
-                  </DropdownItem>
-                  <DropdownItem to="/sections#pricing" tag={Link}>
-                    <i className="nc-icon nc-money-coins" />
-                    Pricing
-                  </DropdownItem>
-                  <DropdownItem to="/sections#testimonials" tag={Link}>
-                    <i className="nc-icon nc-badge" />
-                    Testimonials
-                  </DropdownItem>
-                  <DropdownItem to="/sections#contact-us" tag={Link}>
-                    <i className="nc-icon nc-mobile" />
-                    Contact Us
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle color="default" caret nav>
-                  Examples
-                </DropdownToggle>
-                <DropdownMenu className="dropdown-danger" right>
-                  <DropdownItem to="/about-us" tag={Link}>
-                    <i className="nc-icon nc-bank" />
-                    About-us
-                  </DropdownItem>
-                  <DropdownItem to="/add-product" tag={Link}>
-                    <i className="nc-icon nc-basket" />
-                    Add Product
-                  </DropdownItem>
-                  <DropdownItem to="/blog-post" tag={Link}>
-                    <i className="nc-icon nc-badge" />
-                    Blog Post
-                  </DropdownItem>
-                  <DropdownItem to="/blog-posts" tag={Link}>
-                    <i className="nc-icon nc-bullet-list-67" />
-                    Blog Posts
-                  </DropdownItem>
-                  <DropdownItem to="/contact-us" tag={Link}>
-                    <i className="nc-icon nc-mobile" />
-                    Contact Us
-                  </DropdownItem>
-                  <DropdownItem to="/discover" tag={Link}>
-                    <i className="nc-icon nc-world-2" />
-                    Discover
-                  </DropdownItem>
-                  <DropdownItem to="/e-commerce" tag={Link}>
-                    <i className="nc-icon nc-send" />
-                    Ecommerce
-                  </DropdownItem>
-                  <DropdownItem to="/landing-page" tag={Link}>
-                    <i className="nc-icon nc-spaceship" />
-                    Landing Page
-                  </DropdownItem>
-                  <DropdownItem to="/login-page" tag={Link}>
-                    <i className="nc-icon nc-lock-circle-open" />
-                    Login Page
-                  </DropdownItem>
-                  <DropdownItem to="/product-page" tag={Link}>
-                    <i className="nc-icon nc-album-2" />
-                    Product Page
-                  </DropdownItem>
-                  <DropdownItem to="/profile-page" tag={Link}>
-                    <i className="nc-icon nc-single-02" />
-                    Profile Page
-                  </DropdownItem>
-                  <DropdownItem to="/register-page" tag={Link}>
-                    <i className="nc-icon nc-bookmark-2" />
-                    Register Page
-                  </DropdownItem>
-                  <DropdownItem to="/search-with-sidebar" tag={Link}>
-                    <i className="nc-icon nc-zoom-split" />
-                    Search Page
-                  </DropdownItem>
-                  <DropdownItem to="/settings" tag={Link}>
-                    <i className="nc-icon nc-settings-gear-65" />
-                    Settings Page
-                  </DropdownItem>
-                  <DropdownItem to="/twitter-redesign" tag={Link}>
-                    <i className="nc-icon nc-tie-bow" />
-                    Twitter
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              {/* <NavItem>
-                <Button
-                  className="btn-round"
-                  color="danger"
-                  href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkpr-color-navbar"
-                  target="_blank"
-                >
-                  <i className="nc-icon nc-cart-simple" /> Buy Now
-                </Button>
-              </NavItem> */}
-            </Nav>
-          </Collapse>
-        </Container>
-      </Navbar>
-    </>
-  );
+	const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+	const [bodyClick, setBodyClick] = useState(false);
+	const [collapseOpen, setCollapseOpen] = useState(false);
+	const [ itemColorNav, setItemColorNav ] = useState("btn-neutral");
+	const [logo, setLogo] = useState(logoHorizontalBlanco);
+	useEffect(() => {
+		let headroom = new Headroom(document.getElementById("navbar-main"));
+		// initialise
+		headroom.init();
+		const updateNavbarColor = () => {
+			if (
+				document.documentElement.scrollTop > 499 ||
+				document.body.scrollTop > 499
+			) {
+				setNavbarColor("");
+				setLogo(logoHorizontalNegro);
+			} else if (
+				document.documentElement.scrollTop < 500 ||
+				document.body.scrollTop < 500
+			) {
+				setNavbarColor("navbar-transparent");
+				setLogo(logoHorizontalBlanco);
+			}
+		};
+		window.addEventListener("scroll", updateNavbarColor);
+		return function cleanup() {
+			window.removeEventListener("scroll", updateNavbarColor);
+		};
+	});
+
+	useEffect(() => {
+		if (navbarColor === "") {
+			setItemColorNav("btn-default");
+		} else {
+			setItemColorNav("btn-neutral");
+		}
+		if (collapseOpen) {
+			setItemColorNav("btn-default color-texto-boton");
+		}
+	}, [navbarColor, collapseOpen]);
+
+	return (
+		<>
+			{bodyClick ? (
+				<div
+					id="bodyClick"
+					onClick={() => {
+						document.documentElement.classList.toggle("nav-open");
+						setBodyClick(!bodyClick);
+						setCollapseOpen(!collapseOpen);
+					}}
+				/>
+			) : null}
+			<Navbar
+				className={classnames("fixed-top", navbarColor)}
+				expand="lg"
+				id="navbar-main"
+			>
+				<Container className="padding-x-10">
+					<div className="navbar-translate">
+						<Link to="/">
+							<img className="logo-width" src={ logo } alt="Receramica" />
+						</Link>
+						<button
+							className={classnames("navbar-toggler", collapseOpen ? "toggled" : "")}
+							id="navigation"
+							type="button"
+							onClick={() => {
+								document.documentElement.classList.toggle("nav-open");
+								setBodyClick(!bodyClick);
+								setCollapseOpen(!collapseOpen);
+							}}
+						>
+							<span className="navbar-toggler-bar bar1" />
+							<span className="navbar-toggler-bar bar2" />
+							<span className="navbar-toggler-bar bar3" />
+						</button>
+					</div>
+					<Collapse navbar isOpen={collapseOpen}>
+						<Nav className="mx-auto" navbar>
+							<NavItem color="primary">
+								<Button
+									className={ classnames(itemColorNav)}
+									color="link"
+									href="/store"
+								>
+									TIENDA
+								</Button>
+							</NavItem>
+							<NavItem>
+								<Button
+									className={ classnames(itemColorNav)}
+									color="link"
+									href="/about"
+								>
+									ACERCA DEL ARTISTA
+								</Button>
+							</NavItem>
+						</Nav>
+						<a 
+							className="btn-just-icon btn-link" 
+							href="https://m.facebook.com/ricardoescobarceramica/"
+							target="_blank" 
+							style={{color:"#3b82f6"}}>
+							<svg class="svg-inline--fa fa-facebook fa-w-16 fa-lg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path class="" fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
+						</a>
+						<a 
+							className="btn-just-icon btn-link boton-redes"
+							href="https://www.instagram.com/receramica/"
+							target="_blank" 
+							style={{color:'#c82e66'}}>
+							<svg class="svg-inline--fa fa-instagram fa-w-14 fa-lg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path class="" fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>						
+						</a>
+						<a 
+							className="btn-just-icon btn-link boton-redes" 
+							href="https://wa.me/573153529978"
+							target="_blank"
+							style={{color:'#01b42d'}}>
+							<svg class="svg-inline--fa fa-whatsapp fa-w-14 fa-lg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path class="" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+						</a>
+					</Collapse>
+				</Container>
+			</Navbar>
+		</>
+	);
 }

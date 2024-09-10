@@ -1,120 +1,122 @@
 import { useEffect, useRef, useState } from "react";
 
-import {
-    balmain_1,
-    balmain_2, 
-    balmain_3, 
-    balmain_4, 
-    balmain_5, 
-    balmain_7, 
-    balmain_8,
-    balmain_9
-} from '@/assets/img';
+import { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 } from "../../assets/imgRicardoEscobar";
+import classNames from "classnames";
+import Slider from "react-slick";
+import { Container } from "reactstrap";
 
 
 
 
 export const LandingSlider = () => {
-    
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const containerRef = useRef(null);
-    const images = [balmain_1, balmain_2, balmain_3, balmain_4, balmain_5, balmain_7, balmain_8, balmain_9];
-    const [imagesItems, setImagesItems] = useState([images[0], images[1], images[2]]);
+	
+	const [activeSlide, setActiveSlide] = useState(0);
+	let sliderRef = useRef(null);
+	const images = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6];
 
-    // useEffect(() => {
-    //     setImages([imagesArray[0], imagesArray[1], imagesArray[2]]);
-    //     const handleScroll = () => {
-            
-    //         const position = containerRef.current.scrollLeft;
+	const settings = {
+		dots: true,
+		centerMode: true,
+		infinite: true,
+		centerPadding: "20px",
+		slidesToShow: 3,
+		speed: 500,
+		
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,		
+		beforeChange: (current, next) => {
+			setActiveSlide(next);
+		},
+		
+		responsive: [
+			{
+			  breakpoint: 2400,
+			  settings: {
+				slidesToShow: 3,
+			  }
+			},
+			{
+			  breakpoint: 1300,
+			  settings: {
+				centerMode: false,
+				slidesToShow: 2,
+			  }
+			},
+			{
+			  breakpoint: 700,
+			  settings: {
+				centerMode: false,
+				slidesToShow: 1,
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+				centerMode: false,
+				slidesToShow: 1,
+			  }
+			}
+		  ]
+	  };
 
-    //         const totalWidth = containerRef.current.scrollWidth;
-    //         const viewportWidth = containerRef.current.offsetWidth;
+	return (
+		<>
+			<div className="container-slider">
+			<Container>
+				<div className="slider-container">
+					<Slider
+						ref={slider => {
+							sliderRef = slider;
+						}}
+						{...settings}
+					>
+					{
+						images.map((image, index) => (
+							<div className="container-img">
+								<img className={ classNames( activeSlide === index ? 'slider-item active' : 'slider-item') } src={image} alt={`Imagen ${index}`} />
+							</div>
+						))
+					}
+					</Slider>
+				</div>
+			</Container>
+			</div>
+		</>
+		// <div className="container-slider">
+		// 	<button onClick={prevImage}>Ant
+		// 	<div ref={containerRef} className="container-images" >
 
-            
-    //         if (position >= totalWidth - viewportWidth) {
-    //             // setScrollPosition(0);
 
-    //             containerRef.current.scrollTo(0, 0);
-    //         } else {
-    //             // setScrollPosition(position);
-    //         }
-    //     };
-    
-    //     const container = containerRef.current;
-    //     container.addEventListener('scroll', handleScroll);
-    
-    //     return () => container.removeEventListener('scroll', handleScroll);
-    // }, []);
+		// 		{
+		// 			imagesItems.map((image, index) => (
+		// 				<img className={ classNames(index === 1 ? 'slider-item active' : 'slider-item',animation(index,direction))} src={image} alt={`Imagen ${index}`} />
+		// 			))
+		// 		}
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Función para mostrar la siguiente imagen
-  const nextImage = () => {
-    const current = (currentIndex + 1) % images.length;
-    setCurrentIndex(current);
-
-    if(current === 0) {
-        const items = [images[images.length - 1], images[current], images[current + 1]];
-        console.log('items primero', items);
-        setImagesItems(items);
-    }
-    else if(current === images.length - 1) {
-        const items = [images[current - 1], images[current], images[0]];
-        console.log('items ultimo', items);
-        setImagesItems(items);
-    }
-    else {
-        setImagesItems([images[current - 1], images[current], images[current + 1]]);
-    }
-  };
-
-  // Función para mostrar la imagen anterior
-  const prevImage = () => {
-    const current = (currentIndex - 1 + images.length) % images.length;
-    setCurrentIndex(current);
-    if(current === 0) {
-        const items = [images[images.length - 1], images[current], images[current + 1]];
-        console.log('items primero', items);
-        setImagesItems(items);
-    }
-    else if(current === images.length - 1) {
-        const items = [images[current - 1], images[current], images[0]];
-        console.log('items ultimo', items);
-        setImagesItems(items);
-    }
-    else {
-        setImagesItems([images[current - 1], images[current], images[current + 1]]);
-    }
-  
-  };
-
-        
-
-    return (
-        // <>
-        //     <div className="container-slider">
-        //         <div ref={containerRef} className="container-images scroll-styles" >
-        //             {images.map((image, index) => (
-        //                 <img style={{transform: `translateX(-${scrollPosition}px)`}} key={index} src={image} alt="..."  />
-        //             ))}
-        //         </div>                
-        //     </div>
-        // </>
-        <div className="container-slider">
-            <button onClick={prevImage}>Anterior</button>
-            <div ref={containerRef} className="container-images" >
-                
-                    
-                    {
-                        imagesItems.map((image, index) => (
-                            <img className={index === 1 ? 'slider-item active slideInRight' : 'slider-item' } src={image} alt={`Imagen ${ index}`} />
-                        ))
-                    } 
-                
-            </div>                   
-            <button onClick={nextImage}>Siguiente</button>
-        </div>
-    );
+		// 	</div>
+		// 	<button onClick={nextImage}>Siguiente</button>
+		// </div>
+	);
 }
 
-
+function NextArrow(props) {
+	const { className, style, onClick } = props;
+	return (
+	  <div
+		className={classNames(className, 'arrow')}
+		style={{ ...style, display: "block" }}
+		onClick={onClick}
+	  />
+	);
+  }
+  
+  function PrevArrow(props) {
+	const { className, style, onClick } = props;
+	return (
+	  <div
+	  className={classNames(className, 'arrow')}
+	  style={{ ...style, display: "block" }}
+		onClick={onClick}
+	  />
+	);
+  }

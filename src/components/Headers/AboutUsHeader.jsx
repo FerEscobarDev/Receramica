@@ -11,15 +11,15 @@ export const AboutUsHeader = () => {
                 style={{
                 backgroundImage:
                     "url(" + ricardoAbout + ")",
+                backgroundPosition: "top center"
                 }}
             >
                 <div className="filter filter-danger" />
                 <div className="content-center">
                 <Container>
                     <h1>
-                        Sobre Ricardo Escobar
+                       Ricardo Escobar
                     </h1>
-                    {/* <h3>Let us tell you more about what we do.</h3> */}
                 </Container>
                 </div>
             </div>

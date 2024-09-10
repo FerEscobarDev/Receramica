@@ -1,3 +1,3 @@
 export * from './Landing';
-export * from '../examples/Ecommerce';
+export * from './Ecommerce';
 export * from './About';

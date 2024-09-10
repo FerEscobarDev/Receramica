@@ -1,15 +1,41 @@
 
+.margin-x-10 {
+    margin-inline: 10px;
+}
+
+.padding-x-10 {
+    padding-inline: 10px;
+}
+
+.padding-top-cero {
+    padding-top: 0px !important;
+}
+
+.color-texto-boton {
+    color: #66615B !important;
+}
+
 .container-images {
     /* Establece el tamaño del contenedor para pantallas de PC  */
     height: 70vh; /* 60% del alto total de la pantalla  */
     width: 90vw; /* 80% del ancho total de la pantalla  */
-    display: flex; /* Organiza los componentes hijos de manera horizontal  */
-    flex-direction: row; /* Asegura que los hijos se organicen horizontalmente  */
-    overflow: auto; /* Permite desplazamiento si los hijos exceden el tamaño del contenedor  */
-    justify-content: center; /* Centra los hijos horizontalmente  */
-    align-items: center; /* Centra los hijos verticalmente  */
-    gap: 35px;
-    transition: transform 0.3s ease;
+
+}
+
+.boton-redes{
+    cursor: pointer;
+}
+
+.arrow {
+    color: #6c757d !important;
+}
+
+.arrow:hover {
+    color: #343a40 !important;
+}
+
+.arrow::before {
+    color: #343a40 !important;
 }
 
 /* Media query para dispositivos móviles  */
@@ -25,35 +51,69 @@
 .container-slider {
     width: 80vw;
     height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 85px;
 }
 
-.container-images img {
-    height: 80%;
-    /* width: 400px; */
+.container-img{
+    width: 350px;
 }
-
-.scroll-styles {
-    /* scrollbar-width: none; Oculta el scrollbar en Firefox */
-    /* scroll-snap-type: proximity; Establece el tipo de desplazamiento  */
-}
-
-
   
 .slider-item {
-opacity: 0.7; /* Opacidad para las imágenes laterales */
-transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    padding: 30px;
 }
 
 .slider-item.active {
-opacity: 1; /* Imagen central con opacidad completa */
-transform: scale(1.1); /* Efecto de alejamiento */
-height: 90%;
+    opacity: 1; /* Imagen central con opacidad completa */
+    transform: scale(1.1); /* Efecto de alejamiento */
+    width: 100%;
 }
+
+
+.logo-width {
+    height: 60px;
+}
+
+@media (max-width: 1300px) {
+  
+    .slider-item {
+      width: 100%;
+      padding: 0px, 10px, 0px, 10px;
+    }
+  
+    .slider-item.active {
+      opacity: 0; /* Imagen central con opacidad completa */
+      transform: scale(1); /* Efecto de alejamiento */
+      width: 100%;
+      padding: 0px, 10px, 0px, 10px;
+    }
+}
+
+@media (max-width: 700px) {
+  
+    .slider-item {
+      width: 100%;
+      padding: 0px;
+    }
+  
+    .slider-item.active {
+      opacity: 0; /* Imagen central con opacidad completa */
+      transform: scale(1); /* Efecto de alejamiento */
+      padding: 0;
+    }
+}
+
+/* 
+.logo {
+    position: absolute;
+    top: 0;
+    margin-top: 0px;
+}
+
+.logo-container {
+    margin-top: 0px;
+} */
   
          
 /* img {
