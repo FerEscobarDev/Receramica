@@ -8,16 +8,10 @@ import classnames from "classnames";
 import {
 	Button,
 	Collapse,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem,
-	UncontrolledDropdown,
-	NavbarBrand,
 	Navbar,
 	NavItem,
 	Nav,
-	Container,
-	UncontrolledTooltip,
+	Container
 } from "reactstrap";
 import { logoHorizontalNegro } from "../../assets/imgRicardoEscobar";
 // core components

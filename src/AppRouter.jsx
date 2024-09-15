@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { About, Ecommerce, Landing, ProductPage } from "./pages/RicardoEscobar";
+import { About, Ecommerce, Landing, NotFound, ProductPage } from "./pages/RicardoEscobar";
 
 export const AppRouter = () => {
     return (
@@ -8,6 +8,7 @@ export const AppRouter = () => {
             <Route path="/store" element={<Ecommerce />} />
             <Route path="/about" element={<About/>} />
             <Route path="/creaciones/:id" element={<ProductPage/>} />
+            <Route path="*" element={<NotFound/>} />
         </Routes>
     )
 }
