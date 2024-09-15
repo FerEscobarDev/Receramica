@@ -12,10 +12,13 @@ import {
 
 // // core components
 import { ColorNavbar, EcommerceHeader } from "../../components";
+import environmentConfig from "../../environment"
+import { Link } from "react-router-dom";
 
 export const Ecommerce = () => {
 	const [data, setData] = useState(null);
     const [error, setError] = useState(null);
+    const { authToken, urlBaseApi, urlImages } = environmentConfig;
 
     useEffect(() => {
         document.documentElement.classList.remove("nav-open");
@@ -23,11 +26,11 @@ export const Ecommerce = () => {
 
         const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost/api/creaciones", {
+            const response = await fetch(`${urlBaseApi}/api/creaciones`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer YKgCrV95nc1AOL66hYUzWBSyC3YhVhU8SwLTm13A3b0eaf5e",
+                "Authorization": authToken,
             },
             });
 
@@ -62,13 +65,13 @@ export const Ecommerce = () => {
                                     <Col md="4" key={creacion.id}>
                                         <Card className="card-product card-plain">
                                             <div className="card-image">
-                                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                                <Link to={`/creaciones/${creacion.id}`} onClick={(e) => e.preventDefault()}>
                                                     <img
-                                                        alt="..."
-                                                        className="img-rounded img-responsive alturaImg"
-                                                        src={'http://localhost/storage/'+creacion.images.filter((image) => Boolean(image.main))[0].url}
+                                                        alt={creacion.name}
+                                                        className="img-rounded img-responsive"
+                                                        src={urlImages+creacion.images.filter((image) => Boolean(image.main))[0].url}
                                                     />
-                                                </a>
+                                                </Link>
                                                 <CardBody>
                                                     <div className="card-description">
                                                         <CardTitle tag="h5">{creacion.name}</CardTitle>
@@ -76,10 +79,6 @@ export const Ecommerce = () => {
                                                             {creacion.description}
                                                         </p>
                                                     </div>
-                                                    {/* <div className="price">
-                                                        <s className="mr-1">{creacion.precioAnterior} €</s>
-                                                        <span className="text-danger">{creacion.precio} €</span>
-                                                    </div> */}
                                                 </CardBody>
                                             </div>
                                         </Card>

@@ -1,15 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 } from "../../assets/imgRicardoEscobar";
 import classNames from "classnames";
 import Slider from "react-slick";
-import { Container } from "reactstrap";
+import environmentConfig from "../../environment";
+
 
 export const LandingSlider = () => {
 	
+    const { authToken, urlBaseApi, urlImages } = environmentConfig;
 	const [activeSlide, setActiveSlide] = useState(0);
-	let sliderRef = useRef(null);
-	const images = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6];
 
 	const settings = {
 		dots: true,
@@ -65,11 +64,11 @@ export const LandingSlider = () => {
 
         const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost/api/images", {
+            const response = await fetch(`${urlBaseApi}/api/images`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer YKgCrV95nc1AOL66hYUzWBSyC3YhVhU8SwLTm13A3b0eaf5e",
+                "Authorization": authToken,
             },
             });
 
@@ -94,40 +93,23 @@ export const LandingSlider = () => {
 	return (
 		<>
 			<div className="container-slider">
-                <Container>
+                <div className="container-landing">
                     <div className="slider-container">
                         <Slider
-                            ref={slider => {
-                                sliderRef = slider;
-                            }}
                             {...settings}
                         >
                         {
                             data.map((image, index) => (
                                 <div className="container-img">
-                                    <img className={ classNames( activeSlide === index ? 'slider-item active' : 'slider-item') } src={'http://localhost/storage/'+image.url} alt={`Imagen ${index}`} />
+                                    <img className={ classNames( activeSlide === index ? 'slider-item active' : 'slider-item') } src={urlImages+image.url} alt={`Imagen ${index}`} />
                                 </div>
                             ))
                         }
                         </Slider>
                     </div>
-                </Container>
+                </div>
 			</div>
 		</>
-		// <div className="container-slider">
-		// 	<button onClick={prevImage}>Ant
-		// 	<div ref={containerRef} className="container-images" >
-
-
-		// 		{
-		// 			imagesItems.map((image, index) => (
-		// 				<img className={ classNames(index === 1 ? 'slider-item active' : 'slider-item',animation(index,direction))} src={image} alt={`Imagen ${index}`} />
-		// 			))
-		// 		}
-
-		// 	</div>
-		// 	<button onClick={nextImage}>Siguiente</button>
-		// </div>
 	);
 }
 

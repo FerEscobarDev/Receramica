@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use Intervention\Image\ImageManager;
 
 class ProductsController extends Controller
 {
@@ -41,6 +42,11 @@ class ProductsController extends Controller
 
         foreach ($request->images as $image) {
             $url = $image['file']->store('creaciones_images', 'public');
+
+            $interventionImage = ImageManager::imagick()->read(storage_path('app/public/' . $url));
+            $interventionImage->coverDown(900,1350);
+            $interventionImage->save(storage_path('app/public/' . $url));
+
             $product->images()->create([
                 'url' => $url,
                 'alt' => $product->name,
@@ -93,6 +99,9 @@ class ProductsController extends Controller
 
             foreach ($request->images as $image) {
                 $url = $image['file']->store('creaciones_images', 'public');
+                $interventionImage = ImageManager::imagick()->read(storage_path('app/public/' . $url));
+                $interventionImage->coverDown(900,1350);
+                $interventionImage->save(storage_path('app/public/' . $url));
                 $product->images()->create([
                     'url' => $url,
                     'alt' => $product->name,
