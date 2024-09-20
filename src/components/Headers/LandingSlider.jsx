@@ -1,18 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { imagen1, imagen2, imagen3, imagen4, imagen5, imagen6 } from "../../assets/imgRicardoEscobar";
 import classNames from "classnames";
 import Slider from "react-slick";
-import { Container } from "reactstrap";
-
-
+import environmentConfig from "../../environment";
 
 
 export const LandingSlider = () => {
 	
+    const { authToken, urlBaseApi, urlImages } = environmentConfig;
 	const [activeSlide, setActiveSlide] = useState(0);
-	let sliderRef = useRef(null);
-	const images = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6];
 
 	const settings = {
 		dots: true,
@@ -57,45 +53,63 @@ export const LandingSlider = () => {
 			  }
 			}
 		  ]
-	  };
+	};
+    
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        document.documentElement.classList.remove("nav-open");
+        document.body.classList.add("ecommerce-page");
+
+        const fetchData = async () => {
+        try {
+            const response = await fetch(`${urlBaseApi}/api/images`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": authToken,
+            },
+            });
+
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            setData(result);
+        } catch (error) {
+            setError(error.message);
+        }
+        };
+
+        fetchData();
+
+        return function cleanup() {
+        document.body.classList.remove("ecommerce-page");
+        };
+    }, []);
 
 	return (
 		<>
 			<div className="container-slider">
-			<Container>
-				<div className="slider-container">
-					<Slider
-						ref={slider => {
-							sliderRef = slider;
-						}}
-						{...settings}
-					>
-					{
-						images.map((image, index) => (
-							<div className="container-img">
-								<img className={ classNames( activeSlide === index ? 'slider-item active' : 'slider-item') } src={image} alt={`Imagen ${index}`} />
-							</div>
-						))
-					}
-					</Slider>
-				</div>
-			</Container>
+                <div className="container-landing">
+                    <div className="slider-container">
+                        <Slider
+                            {...settings}
+                        >
+                        {
+                            data.map((image, index) => (
+                                <div className="container-img">
+                                    <img className={ classNames( activeSlide === index ? 'slider-item active' : 'slider-item') } src={urlImages+image.url} alt={`Imagen ${index}`} />
+                                </div>
+                            ))
+                        }
+                        </Slider>
+                    </div>
+                </div>
 			</div>
 		</>
-		// <div className="container-slider">
-		// 	<button onClick={prevImage}>Ant
-		// 	<div ref={containerRef} className="container-images" >
-
-
-		// 		{
-		// 			imagesItems.map((image, index) => (
-		// 				<img className={ classNames(index === 1 ? 'slider-item active' : 'slider-item',animation(index,direction))} src={image} alt={`Imagen ${index}`} />
-		// 			))
-		// 		}
-
-		// 	</div>
-		// 	<button onClick={nextImage}>Siguiente</button>
-		// </div>
 	);
 }
 
