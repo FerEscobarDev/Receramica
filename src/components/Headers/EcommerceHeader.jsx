@@ -18,8 +18,7 @@ export const EcommerceHeader = () => {
         <div className="filter" />
         <div className="content-center">
           <Container className="text-center">
-            <h1>Tesoros de barro: Arte y Pasión</h1>
-            <h3>Transformando el barro en arte, una pieza a la vez</h3>
+            <h1>Obras</h1>
           </Container>
         </div>
       </div>

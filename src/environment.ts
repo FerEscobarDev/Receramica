@@ -3,7 +3,7 @@ const esDesarrollo: boolean = location.hostname === 'localhost' || location.host
 
 const urlBaseApi: string = esDesarrollo ? 'http://localhost' : 'https://ricardo-admin.receramica.com';
 
-const authToken: string = esDesarrollo ? `Bearer YKgCrV95nc1AOL66hYUzWBSyC3YhVhU8SwLTm13A3b0eaf5e` : 'Bearer ojstPtWPNm7nguTDiyqSY7dMopSQOlLB6GvgPSCf087d6484';
+const authToken: string = esDesarrollo ? `Bearer 6dk7SWKSBvN0975EHGsFtX94xeJ0RtzRSNBDAHKA3500a300` : 'Bearer BC4agMG15lM7Nv1qyNkjg51DVOFilg9hGPNPS90hd707065d';
 
 
 

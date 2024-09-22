@@ -84,13 +84,13 @@ const submit = () => {
 
                                 <div class="mt-4">
                                     <InputLabel for="description" value="Descripción" />
-                                    <TextInput
+                                    <textarea
                                         id="description"
                                         v-model="form.description"
                                         type="text"
-                                        class="mt-1 block w-full"
+                                        class="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                         required
-                                    />
+                                    ></textarea>
                                     <InputError class="mt-2" :message="form.errors.description" />
                                 </div>
 

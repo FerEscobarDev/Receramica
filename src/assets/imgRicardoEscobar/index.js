@@ -6,6 +6,7 @@ import logoSvg from './logo.svg';
 import logoHorizontalBlanco from './logoHorizontalBlanco.png';
 import logoHorizontalNegro from './logoHorizontalNegro.png';
 import fondoReceramica from './fondoReceramica.jpg';
+import landingVacia from './landingVacia.jpeg';
 import imagen1 from './Productos/imagen1.jpg';
 import imagen2 from './Productos/imagen2.jpg';
 import imagen3 from './Productos/imagen3.jpg';
@@ -23,6 +24,7 @@ export {
     logoHorizontalBlanco,
     logoHorizontalNegro,
     fondoReceramica,
+    landingVacia,
     imagen1,
     imagen2,
     imagen3,

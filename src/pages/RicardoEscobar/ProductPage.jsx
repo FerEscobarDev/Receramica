@@ -74,8 +74,6 @@ export const ProductPage = () => {
 
             const product = result.find((product) => product.id == idProduct);
 
-            console.log(product);
-
             setData(product);
         } catch (error) {
             setError(error.message);

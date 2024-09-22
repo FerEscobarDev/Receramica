@@ -14,13 +14,13 @@ export const AboutUsHeader = () => {
                 backgroundPosition: "top center"
                 }}
             >
-                <div className="filter filter-danger" />
+                <div className="filter" />
                 <div className="content-center">
-                <Container>
-                    <h1>
-                       Ricardo Escobar
-                    </h1>
-                </Container>
+                    <Container>
+                        <h1>
+                        Ricardo Escobar
+                        </h1>
+                    </Container>
                 </div>
             </div>
         </>

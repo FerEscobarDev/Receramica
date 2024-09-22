@@ -32,8 +32,7 @@ const submitDelete = (id) => {
                     </Link>
                 </div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="min-w-full overflow-auto border border-gray-200 rounded-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
+                        <table class="min-w-full divide-y divide-gray-200 table-fixed">
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -58,7 +57,7 @@ const submitDelete = (id) => {
                                     <td class="text-center font-semibold px-6 py-4 whitespace-nowrap text-sm">
                                         {{ product.name }}
                                     </td>
-                                    <td class="text-center hidden md:table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <td class="max-w-96  px-6 py-4  text-sm text-gray-500 truncate ...">
                                         {{ product.description }}
                                     </td>
                                     <td class="text-center px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -81,7 +80,7 @@ const submitDelete = (id) => {
                                 </tr>
                             </tbody>
                         </table>   
-                    </div>
+                    
                 </div>
             </div>
         </div>

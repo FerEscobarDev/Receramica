@@ -3,7 +3,7 @@
 }
 
 .padding-x-10 {
-    padding-inline: 10px;
+    padding-inline: 15px;
 }
 
 .padding-top-cero {
@@ -25,7 +25,7 @@
 
 .body-producto {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 80px;
     display: flex;
     justify-content: center;
@@ -35,6 +35,30 @@
 
 .boton-redes {
     cursor: pointer;
+}
+
+.footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pading-butom-0 {
+    padding-bottom: 0px !important;
+}
+
+.pading-butom-70 {
+    padding-bottom: 70px;
+}
+
+.footer-rick {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .arrow {
@@ -67,7 +91,16 @@
         transition: transform 0.3s ease;
     }
 
+    .footer-redes {
+        width: 100%;
+        padding-top: 0px !important;
+        margin-top: 0px;
+    }
 
+    .footer-rick {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
 }
 
 .container-slider {
@@ -76,11 +109,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 200px;
 }
 
 .container-landing {
-    width: 90%;
-    height: 80%;
+    width: 80%;
+    height: 70%;
 }
 
 .slider-item {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AboutUsHeader, ColorNavbar } from "../../components";
+import { AboutUsHeader, ColorNavbar, FooterEcommerce } from "../../components";
 
 import {
     Button,
@@ -29,8 +29,8 @@ export const About = () => {
         <>
             <ColorNavbar />
             <AboutUsHeader />
-            <div className="main padding-x-10">
-                <div className="section">
+            <div className="main">
+                <div className="section pading-butom-0">
                     <Container>
                         <h3 className="title-uppercase">El Artista</h3>
                         <p>
@@ -50,91 +50,92 @@ export const About = () => {
                             la percepción visual.
                         </p>
                         
-                       
-                        <Row>
-                            <Card className="card-plain card-blog">
-                                <Row>
-                                    <Col xs={{ order: 2 }} md={{ order: 1, size:5 }}>
-                                        <div className="card-image">
-                                            <img
-                                            alt="..."
-                                            className="img"
-                                            src={tecnica}
-                                            />
-                                        </div>
-                                    </Col>
-                                    <Col xs={{ order: 1 }} md={{ order: 2, size: 7 }}>
-                                        <CardBody>
-                                            <CardTitle tag="h3">
-                                                Innovación y Maestría
-                                            </CardTitle>
-                                            <p className="card-description">
-                                                La técnica de Ricardo Escobar es el resultado de una exploración constante y desafiante. 
-                                                Su enfoque se centra en llevar al límite las posibilidades del material cerámico y los 
-                                                procesos básicos del taller, siempre con el objetivo de ofrecer emociones renovadas y 
-                                                una sensación de plenitud. La obra de Escobar refleja resiliencia, siendo al mismo tiempo 
-                                                frágil y fuerte, renaciendo como un Fénix en cada una de sus creaciones. Cada pieza es una 
-                                                expresión de felicidad, entusiasmo y sorpresa perpetuos.
-                                            </p>
-                                        </CardBody>
-                                    </Col>
-                                </Row>
-                            </Card>
-                            <Card className="card-plain card-blog">
-                                <Row>
-                                    <Col md="7">
-                                        <CardBody>
-                                            <CardTitle tag="h3">
-                                                El Santuario Creativo
-                                            </CardTitle>
-                                            <p className="card-description">
-                                                El taller de Ricardo Escobar es un centro de aprendizaje y creación. Este espacio está dedicado 
-                                                al desarrollo de proyectos cerámicos que no solo son hermosos, sino también significativos. 
-                                                Aquí, los asistentes encuentran un medio para la expresión personal y la mejora técnica, 
-                                                explorando todos los aspectos del proceso cerámico. El taller promueve la reflexión y el autocuidado, 
-                                                proporcionando un entorno donde la creatividad florece y las habilidades artesanales se perfeccionan.
-                                            </p>
-                                        </CardBody>
-                                    </Col>
-                                    <Col md="5">
-                                        <div className="card-image">
-                                            <img
-                                            alt="..."
-                                            className="img"
-                                            src={taller}
-                                            />
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Card>
-                            <Card className="card-plain card-blog">
-                                <Row>
-                                    <Col xs={{ order: 2 }} md={{ order: 1, size:5 }}>
-                                        <div className="card-image">
-                                            <img
-                                            alt="..."
-                                            className="img"
-                                            src={barro}
-                                            />
-                                        </div>
-                                    </Col>
-                                    <Col xs={{ order: 1 }} md={{ order: 2, size: 7 }}>
-                                        <CardBody>
-                                            <CardTitle tag="h3">
-                                                La Esencia de la Materia
-                                            </CardTitle>
-                                            <p className="card-description">
-                                                El barro es el corazón de las creaciones de Ricardo Escobar. Utilizando una pasta cerámica elaborada con materias 
-                                                primas del altiplano cundiboyacense, sus piezas resultan ricas en información y textura. Esta alquimia entre 
-                                                cerámica y vidrio da vida a esculturas únicas, donde los esmaltes formulados en su propio taller interactúan 
-                                                con el barro para crear superficies distintivas. Cada pieza simboliza una búsqueda constante de influencias 
-                                                culturales y propuestas orgánicas nuevas e inspiradoras.
-                                            </p>
-                                        </CardBody>
-                                    </Col>
-                                </Row>
-                            </Card>
-                        </Row>
+                       <div className=" padding-x-10">
+                            <Row>
+                                <Card className="card-plain card-blog">
+                                    <Row>
+                                        <Col xs={{ order: 2 }} md={{ order: 1, size:5 }}>
+                                            <div className="card-image">
+                                                <img
+                                                alt="..."
+                                                className="img"
+                                                src={tecnica}
+                                                />
+                                            </div>
+                                        </Col>
+                                        <Col xs={{ order: 1 }} md={{ order: 2, size: 7 }}>
+                                            <CardBody>
+                                                <CardTitle tag="h3">
+                                                    Innovación y Maestría
+                                                </CardTitle>
+                                                <p className="card-description">
+                                                    La técnica de Ricardo Escobar es el resultado de una exploración constante y desafiante. 
+                                                    Su enfoque se centra en llevar al límite las posibilidades del material cerámico y los 
+                                                    procesos básicos del taller, siempre con el objetivo de ofrecer emociones renovadas y 
+                                                    una sensación de plenitud. La obra de Escobar refleja resiliencia, siendo al mismo tiempo 
+                                                    frágil y fuerte, renaciendo como un Fénix en cada una de sus creaciones. Cada pieza es una 
+                                                    expresión de felicidad, entusiasmo y sorpresa perpetuos.
+                                                </p>
+                                            </CardBody>
+                                        </Col>
+                                    </Row>
+                                </Card>
+                                <Card className="card-plain card-blog">
+                                    <Row>
+                                        <Col md="7">
+                                            <CardBody>
+                                                <CardTitle tag="h3">
+                                                    El Santuario Creativo
+                                                </CardTitle>
+                                                <p className="card-description">
+                                                    El taller de Ricardo Escobar es un centro de aprendizaje y creación. Este espacio está dedicado 
+                                                    al desarrollo de proyectos cerámicos que no solo son hermosos, sino también significativos. 
+                                                    Aquí, los asistentes encuentran un medio para la expresión personal y la mejora técnica, 
+                                                    explorando todos los aspectos del proceso cerámico. El taller promueve la reflexión y el autocuidado, 
+                                                    proporcionando un entorno donde la creatividad florece y las habilidades artesanales se perfeccionan.
+                                                </p>
+                                            </CardBody>
+                                        </Col>
+                                        <Col md="5">
+                                            <div className="card-image">
+                                                <img
+                                                alt="..."
+                                                className="img"
+                                                src={taller}
+                                                />
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Card>
+                                <Card className="card-plain card-blog">
+                                    <Row>
+                                        <Col xs={{ order: 2 }} md={{ order: 1, size:5 }}>
+                                            <div className="card-image">
+                                                <img
+                                                alt="..."
+                                                className="img"
+                                                src={barro}
+                                                />
+                                            </div>
+                                        </Col>
+                                        <Col xs={{ order: 1 }} md={{ order: 2, size: 7 }}>
+                                            <CardBody>
+                                                <CardTitle tag="h3">
+                                                    La Esencia de la Materia
+                                                </CardTitle>
+                                                <p className="card-description">
+                                                    El barro es el corazón de las creaciones de Ricardo Escobar. Utilizando una pasta cerámica elaborada con materias 
+                                                    primas del altiplano cundiboyacense, sus piezas resultan ricas en información y textura. Esta alquimia entre 
+                                                    cerámica y vidrio da vida a esculturas únicas, donde los esmaltes formulados en su propio taller interactúan 
+                                                    con el barro para crear superficies distintivas. Cada pieza simboliza una búsqueda constante de influencias 
+                                                    culturales y propuestas orgánicas nuevas e inspiradoras.
+                                                </p>
+                                            </CardBody>
+                                        </Col>
+                                    </Row>
+                                </Card>
+                            </Row>
+                        </div>
                         {/* <h3 className="more-info">Need more information?</h3>
                         <Row className="coloured-cards">
                         <Col md="4" sm="6">
@@ -216,6 +217,7 @@ export const About = () => {
                     </Container>
                 </div>
             </div>
+            <FooterEcommerce />
         </>
     )
 }

@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 
 // // core components
-import { ColorNavbar, EcommerceHeader } from "../../components";
+import { ColorNavbar, EcommerceHeader, FooterEcommerce } from "../../components";
 import environmentConfig from "../../environment"
 import { Link } from "react-router-dom";
 
@@ -51,12 +51,19 @@ export const Ecommerce = () => {
         document.body.classList.remove("ecommerce-page");
         };
     }, []);
+
+    const truncateString = (string) => {
+        return string.length > 80 
+        ? string.substring(0, 80) + '...' 
+        : string;
+    }
+
 	return (
 		<>
 			<ColorNavbar />
 			<EcommerceHeader />
 			<div className="wrapper">
-				<div className="section latest-offers">
+				<div className="section latest-offers pading-botom-0">
 					<Container>
 						<h3 className="section-title">Creaciones</h3>
 						<Row>
@@ -65,7 +72,7 @@ export const Ecommerce = () => {
                                     <Col md="4" key={creacion.id}>
                                         <Card className="card-product card-plain">
                                             <div className="card-image">
-                                                <Link to={`/creaciones/${creacion.id}`} onClick={(e) => e.preventDefault()}>
+                                                <Link to={`/creaciones/${creacion.id}`} >
                                                     <img
                                                         alt={creacion.name}
                                                         className="img-rounded img-responsive"
@@ -76,7 +83,7 @@ export const Ecommerce = () => {
                                                     <div className="card-description">
                                                         <CardTitle tag="h5">{creacion.name}</CardTitle>
                                                         <p className="card-description">
-                                                            {creacion.description}
+                                                            {truncateString(creacion.description)}
                                                         </p>
                                                     </div>
                                                 </CardBody>
@@ -89,6 +96,7 @@ export const Ecommerce = () => {
 					</Container>
 				</div>
 			</div>
+            <FooterEcommerce />
 		</>
 	);
 }
