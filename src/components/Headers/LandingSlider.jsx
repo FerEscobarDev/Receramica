@@ -43,6 +43,7 @@ export const LandingSlider = () => {
                 settings: {
                     centerMode: false,
                     slidesToShow: 1,
+                    dots: false,
                 }
             },
             {
@@ -50,6 +51,7 @@ export const LandingSlider = () => {
                 settings: {
                     centerMode: false,
                     slidesToShow: 1,
+                    dots: false,
                 }
             }
         ]
@@ -112,8 +114,10 @@ export const LandingSlider = () => {
 
             {
                 isLoading && data.length === 0 &&
-                <div className="uil-reload-css mr-1">
-                    <div />
+                <div className="reload-container">
+                    <div className="uil-reload-css mr-1">
+                        <div />
+                    </div>
                 </div>
             }
 

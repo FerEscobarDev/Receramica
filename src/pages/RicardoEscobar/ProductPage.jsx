@@ -161,7 +161,7 @@ export const ProductPage = () => {
                                 <hr />
                                 <Row>
                                     <Col className="offset-md-5" md="7" sm="8">
-                                        <a href={`https://api.whatsapp.com/send?phone=573153529978&text=Hola%20Ricardo%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20pieza%20${data.name}%20-%20https%3A%2F%2Freceramica.com%2Fcreaciones%2F${data.id}`} target="_blank">
+                                        <a href={`https://api.whatsapp.com/send?phone=573153529978&text=Hola%20Ricardo%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20pieza%20${encodeURIComponent(data.name)}%20-%20https%3A%2F%2Freceramica.com%2Fcreaciones%2F${data.id}`} target="_blank">
                                             <Button block className="btn-round" color="danger">
                                                 Saber más  <i className="fa fa-chevron-right" />
                                             </Button>

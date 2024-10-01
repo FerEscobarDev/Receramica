@@ -77,7 +77,15 @@
     display: none;
 }
 
-
+.reload-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
 
 /* Media query para dispositivos móviles  */
 @media (max-width: 768px) {
