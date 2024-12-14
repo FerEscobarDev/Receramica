@@ -78,7 +78,8 @@ export const LandingSlider = () => {
                 }
 
                 const result = await response.json();
-                setData(result);
+                
+                setData(shuffle(result));
             } catch (error) {
                 setError(error.message);
             }
@@ -90,6 +91,22 @@ export const LandingSlider = () => {
             document.body.classList.remove("ecommerce-page");
         };
     }, []);
+
+    //escribe un método que organice el resultado de la api de manera aleatoria
+    const shuffle = (array) => {
+        let currentIndex = array.length, temporaryValue, randomIndex;
+
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
 
     return (
         <>

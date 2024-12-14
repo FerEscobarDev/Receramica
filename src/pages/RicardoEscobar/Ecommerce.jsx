@@ -39,7 +39,8 @@ export const Ecommerce = () => {
             }
 
             const result = await response.json();
-            setData(result);
+            setData(result.sort((a, b) => b.id - a.id));
+
         } catch (error) {
             setError(error.message);
         }
@@ -58,15 +59,40 @@ export const Ecommerce = () => {
         : string;
     }
 
-	return (
-		<>
-			<ColorNavbar />
-			<EcommerceHeader />
-			<div className="wrapper">
-				<div className="section latest-offers pading-botom-0">
-					<Container>
-						<h3 className="section-title">Creaciones</h3>
-						<Row>
+    const sortData = (order) => {
+        const sortedData = [...data].sort((a, b) => {
+            if (order === "asc") {
+                return a.id - b.id;
+            } else {
+                return b.id - a.id;
+            }
+        });
+        setData(sortedData);
+    };
+
+    const [sortOrder, setSortOrder] = useState("des");
+
+    const toggleSortOrder = () => {
+        const newOrder = sortOrder === "asc" ? "des" : "asc";
+        setSortOrder(newOrder);
+        sortData(newOrder);
+    };
+
+    return (
+        <>
+            <ColorNavbar />
+            <EcommerceHeader />
+            <div className="wrapper">
+                <div className="section latest-offers pading-botom-0" style={{paddingTop: window.innerWidth < 768 ? '20px' : '30px'}}>
+                    <Container>
+                        <div style={{ display:'flex', justifyContent: window.innerWidth < 768 ? 'center' : 'space-between', alignItems: window.innerWidth < 768 ? 'start' : 'center', height: window.innerWidth < 768 ? 'min-content' : "40px", marginBottom:'25px', flexDirection: window.innerWidth < 768 ? 'column' : 'row', gap:'10px' }}>
+                            <h3 className="section-title" style={{margin:0}} >Creaciones</h3>
+                            <button className="btn btn-primary btn-sm" onClick={toggleSortOrder}>
+                                <i className={`fa fa-sort-alpha-${sortOrder === "asc" ? "asc" : "desc"}`} /> Orden {sortOrder === "asc" ? "Ascendente" : "Descendente"}
+                            </button>
+                        </div>
+
+                        <Row>
                             {
                                 data && data.map((creacion) => (
                                     <Col md="4" key={creacion.id}>
@@ -92,11 +118,11 @@ export const Ecommerce = () => {
                                     </Col>
                                 ))
                             }
-						</Row>
-					</Container>
-				</div>
-			</div>
+                        </Row>
+                    </Container>
+                </div>
+            </div>
             <FooterEcommerce />
-		</>
-	);
+        </>
+    );
 }
