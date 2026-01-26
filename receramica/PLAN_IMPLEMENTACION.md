@@ -57,12 +57,12 @@ Sitio web de cerámica de autor para Ricardo Escobar. Experiencia inmersiva con 
 - [x] 3.4 Optimizar carga con next/image y blur placeholder
 - [x] 3.5 Implementar prefetch de imágenes críticas
 
-### FASE 4: Componentes Base
-- [ ] 4.1 Crear componente Header con navegación
-- [ ] 4.2 Crear componente Footer
-- [ ] 4.3 Crear componente Button (variantes: primary, outline)
-- [ ] 4.4 Crear componente IconButton (navegación carrusel)
-- [ ] 4.5 Crear componente SectionTitle (label + title + description)
+### FASE 4: Componentes Base ✅
+- [x] 4.1 Crear componente Header con navegación
+- [x] 4.2 Crear componente Footer
+- [x] 4.3 Crear componente Button (variantes: primary, outline)
+- [x] 4.4 Crear componente IconButton (navegación carrusel)
+- [x] 4.5 Crear componente SectionTitle (label + title + description)
 
 ### FASE 5: Landing Page - Secciones
 - [ ] 5.1 Implementar Hero Section con gradiente radial
@@ -355,9 +355,16 @@ NEXT_PUBLIC_SITE_URL=https://receramica.com
 
 ## Progreso
 
-**Fase actual**: Fase 4 - Componentes Base
-**Completado**: 25% (16/64 tareas)
+**Fase actual**: Fase 5 - Landing Page Secciones
+**Completado**: 33% (21/64 tareas)
 **Última actualización**: 2026-01-25
+
+### Archivos creados en Fase 4:
+- `components/ui/Button.tsx` - Button con 4 variantes y 3 tamaños
+- `components/ui/IconButton.tsx` - IconButton + 5 iconos SVG
+- `components/ui/SectionTitle.tsx` - Títulos de sección reutilizables
+- `components/layout/Header.tsx` - Header responsive con menú móvil
+- `components/layout/Footer.tsx` - Footer con navegación y redes sociales
 
 ### Archivos creados en Fase 3:
 - `app/api/pieces/route.ts` - API de listado de piezas con caché ISR
