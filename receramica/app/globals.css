@@ -1,26 +1,225 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fondos */
+  --bg-earth: #1A1512;
+  --bg-clay: #2A241F;
+  --bg-warm: #3D352D;
+
+  /* Colores principales */
+  --cream: #E8DFD5;
+  --terracotta: #C9725A;
+  --terracotta-dark: #8B4D3A;
+  --gold-earth: #B8956D;
+  --sand: #B8A898;
+
+  /* Texto */
+  --text-primary: #F5EDE5;
+  --text-secondary: #A89888;
+  --text-muted: #6E6058;
+
+  /* Bordes y overlays */
+  --border-subtle: #4A403540;
+  --overlay-dark: #1A1512F2;
+  --overlay-medium: #1A151280;
+
+  /* Sombras */
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 35px 70px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colores para Tailwind v4 */
+  --color-bg-earth: var(--bg-earth);
+  --color-bg-clay: var(--bg-clay);
+  --color-bg-warm: var(--bg-warm);
+  --color-cream: var(--cream);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-gold-earth: var(--gold-earth);
+  --color-sand: var(--sand);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-overlay-dark: var(--overlay-dark);
+  --color-overlay-medium: var(--overlay-medium);
+
+  /* Fuentes */
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-inter);
+
+  /* Espaciado personalizado */
+  --spacing-section: 100px;
+  --spacing-section-x: 80px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-earth);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Utilidades personalizadas */
+.text-balance {
+  text-wrap: balance;
+}
+
+.gradient-radial-dark {
+  background: radial-gradient(ellipse at center 30%, #3D352D 0%, #1A1512 100%);
+}
+
+.gradient-radial-overlay {
+  background: radial-gradient(ellipse at center, rgba(26, 21, 18, 0) 0%, rgba(26, 21, 18, 0.5) 100%);
+}
+
+.gradient-linear-essence {
+  background: linear-gradient(180deg, #3D352D 0%, #1A1512 100%);
+}
+
+/* Animaciones base */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Delay utilities para stagger */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-clay);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Focus styles para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+/* Selección de texto */
+::selection {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* Bloquear scroll cuando modal está abierto */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Transiciones globales suaves */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

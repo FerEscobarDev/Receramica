@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "title": "Receramica | Ricardo Escobar - Ceramic Artist",
+    "description": "Discover the unique ceramic artworks of Ricardo Escobar. Each piece is an expression of perpetual happiness, enthusiasm, and surprise."
+  },
+  "nav": {
+    "gallery": "Gallery",
+    "artist": "The Artist",
+    "workshop": "The Workshop",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "AUTHOR CERAMICS",
+    "title": "Ricardo Escobar",
+    "description": "Each piece is an expression of perpetual happiness, enthusiasm, and surprise"
+  },
+  "gallery": {
+    "label": "EXHIBITION",
+    "title": "Artist's Gallery",
+    "subtitle": "Discover each piece in an immersive experience",
+    "experienceButton": "Live the Exhibition Experience",
+    "pieceInfo": {
+      "year": "Year",
+      "technique": "Technique",
+      "uniquePiece": "Unique piece"
+    }
+  },
+  "artist": {
+    "label": "THE ARTIST",
+    "title": "Ricardo Escobar",
+    "description1": "Ricardo Escobar is a distinguished artist whose vision and creativity are manifested in each of his works. His pieces are not only products of his technical skill but also carriers of his identity and essence, transforming design into personal expression and craftsmanship into an unmistakable signature.",
+    "description2": "His goal is to beautify people's lives, creating objects that not only adorn spaces but also generate new aesthetic and sensory experiences."
+  },
+  "innovation": {
+    "label": "TECHNIQUE AND VISION",
+    "title": "Innovation and Mastery",
+    "description": "Ricardo Escobar's technique is the result of constant and challenging exploration. His approach focuses on pushing the limits of ceramic material.",
+    "features": {
+      "resilience": {
+        "title": "Resilience",
+        "description": "The work reflects resilience, being both fragile and strong, reborn like a Phoenix in each creation."
+      },
+      "emotion": {
+        "title": "Perpetual Emotion",
+        "description": "Each piece is an expression of perpetual happiness, enthusiasm, and surprise that connects with the viewer."
+      },
+      "originality": {
+        "title": "Originality",
+        "description": "A fusion of originality and creativity, offering luxury that respects function while celebrating image."
+      }
+    }
+  },
+  "workshop": {
+    "label": "THE CREATIVE SANCTUARY",
+    "title": "The Workshop",
+    "description1": "Ricardo Escobar's workshop is a center of learning and creation. This space is dedicated to developing ceramic projects that are not only beautiful but also meaningful.",
+    "description2": "Here, attendees find a medium for personal expression and technical improvement, exploring all aspects of the ceramic process. The workshop promotes reflection and self-care, providing an environment where creativity flourishes."
+  },
+  "essence": {
+    "label": "THE ESSENCE",
+    "title": "The Heart of Clay",
+    "description": "Clay is the heart of Ricardo Escobar's creations. Using ceramic paste made from raw materials from the Cundiboyacense highlands, his pieces are rich in information and texture.",
+    "materials": {
+      "clay": {
+        "title": "Cundiboyacense Clay",
+        "description": "Raw materials from the highlands that give life to unique textures"
+      },
+      "glazes": {
+        "title": "Artisanal Glazes",
+        "description": "Formulated in the workshop to create distinctive surfaces"
+      },
+      "alchemy": {
+        "title": "Ceramic Alchemy",
+        "description": "The fusion between ceramics and glass in unique sculptures"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to discover your unique piece?",
+    "description": "Each work by Ricardo Escobar is unrepeatable. Contact us to learn about available pieces or commission a personalized creation.",
+    "viewGallery": "View Full Gallery",
+    "contactArtist": "Contact the Artist"
+  },
+  "footer": {
+    "tagline": "Author ceramics by Ricardo Escobar. Each piece, a unique story.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 Receramica. All rights reserved.",
+    "madeWith": "Made with passion in Colombia"
+  },
+  "exposition": {
+    "title": "EXHIBITION",
+    "artistName": "Ricardo Escobar",
+    "close": "Close"
+  },
+  "modal": {
+    "uniquePiece": "UNIQUE PIECE",
+    "description": "DESCRIPTION",
+    "scrollMore": "Scroll to see more",
+    "interested": "Interested in this piece? Check availability and price.",
+    "whatsappButton": "Inquire via WhatsApp",
+    "close": "Close",
+    "imageCounter": "{current} / {total}"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try again"
+  }
+}

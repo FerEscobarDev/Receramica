@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "title": "Recerámica | Ricardo Escobar - Artista Cerámico",
+    "description": "Descubre las obras cerámicas únicas de Ricardo Escobar. Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos."
+  },
+  "nav": {
+    "gallery": "Galería",
+    "artist": "El Artista",
+    "workshop": "El Taller",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "subtitle": "CERÁMICA DE AUTOR",
+    "title": "Ricardo Escobar",
+    "description": "Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos"
+  },
+  "gallery": {
+    "label": "EXPOSICIÓN",
+    "title": "Galería del Artista",
+    "subtitle": "Descubre cada pieza en una experiencia inmersiva",
+    "experienceButton": "Vivir la Experiencia de la Exposición",
+    "pieceInfo": {
+      "year": "Año",
+      "technique": "Técnica",
+      "uniquePiece": "Pieza única"
+    }
+  },
+  "artist": {
+    "label": "EL ARTISTA",
+    "title": "Ricardo Escobar",
+    "description1": "Ricardo Escobar es un destacado artista cuya visión y creatividad se manifiestan en cada una de sus obras. Sus piezas no solo son productos de su habilidad técnica, sino también portadoras de su identidad y esencia, convirtiendo el diseño en una expresión personal y la artesanía en una firma inconfundible.",
+    "description2": "Su objetivo es embellecer la vida de las personas, creando objetos que no solo adornan los espacios, sino que también generan nuevas experiencias estéticas y sensoriales."
+  },
+  "innovation": {
+    "label": "TÉCNICA Y VISIÓN",
+    "title": "Innovación y Maestría",
+    "description": "La técnica de Ricardo Escobar es el resultado de una exploración constante y desafiante. Su enfoque se centra en llevar al límite las posibilidades del material cerámico.",
+    "features": {
+      "resilience": {
+        "title": "Resiliencia",
+        "description": "La obra refleja resiliencia, siendo al mismo tiempo frágil y fuerte, renaciendo como un Fénix en cada creación."
+      },
+      "emotion": {
+        "title": "Emoción Perpetua",
+        "description": "Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos que conecta con el espectador."
+      },
+      "originality": {
+        "title": "Originalidad",
+        "description": "Una fusión de originalidad y creatividad, ofreciendo un lujo que respeta la función mientras celebra la imagen."
+      }
+    }
+  },
+  "workshop": {
+    "label": "EL SANTUARIO CREATIVO",
+    "title": "El Taller",
+    "description1": "El taller de Ricardo Escobar es un centro de aprendizaje y creación. Este espacio está dedicado al desarrollo de proyectos cerámicos que no solo son hermosos, sino también significativos.",
+    "description2": "Aquí, los asistentes encuentran un medio para la expresión personal y la mejora técnica, explorando todos los aspectos del proceso cerámico. El taller promueve la reflexión y el autocuidado, proporcionando un entorno donde la creatividad florece."
+  },
+  "essence": {
+    "label": "LA ESENCIA",
+    "title": "El Corazón del Barro",
+    "description": "El barro es el corazón de las creaciones de Ricardo Escobar. Utilizando una pasta cerámica elaborada con materias primas del altiplano cundiboyacense, sus piezas resultan ricas en información y textura.",
+    "materials": {
+      "clay": {
+        "title": "Arcilla Cundiboyacense",
+        "description": "Materias primas del altiplano que dan vida a texturas únicas"
+      },
+      "glazes": {
+        "title": "Esmaltes Artesanales",
+        "description": "Formulados en el taller para crear superficies distintivas"
+      },
+      "alchemy": {
+        "title": "Alquimia Cerámica",
+        "description": "La fusión entre cerámica y vidrio en esculturas únicas"
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para descubrir tu pieza única?",
+    "description": "Cada obra de Ricardo Escobar es irrepetible. Contacta para conocer las piezas disponibles o encargar una creación personalizada.",
+    "viewGallery": "Ver Galería Completa",
+    "contactArtist": "Contactar al Artista"
+  },
+  "footer": {
+    "tagline": "Cerámica de autor por Ricardo Escobar. Cada pieza, una historia única.",
+    "navigation": "Navegación",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "copyright": "© 2024 Recerámica. Todos los derechos reservados.",
+    "madeWith": "Hecho con pasión en Colombia"
+  },
+  "exposition": {
+    "title": "EXPOSICIÓN",
+    "artistName": "Ricardo Escobar",
+    "close": "Cerrar"
+  },
+  "modal": {
+    "uniquePiece": "PIEZA ÚNICA",
+    "description": "DESCRIPCIÓN",
+    "scrollMore": "Desliza para ver más",
+    "interested": "¿Te interesa esta pieza? Consulta disponibilidad y precio.",
+    "whatsappButton": "Consultar por WhatsApp",
+    "close": "Cerrar",
+    "imageCounter": "{current} / {total}"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "tryAgain": "Intentar de nuevo"
+  }
+}

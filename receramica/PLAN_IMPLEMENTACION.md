@@ -35,27 +35,27 @@ Sitio web de cerámica de autor para Ricardo Escobar. Experiencia inmersiva con 
 
 ## Fases de Implementación
 
-### FASE 1: Configuración Base
-- [ ] 1.1 Configurar variables CSS con colores del diseño
-- [ ] 1.2 Configurar fuentes Google (Cormorant Garamond + Inter)
-- [ ] 1.3 Configurar Next.js para imágenes remotas (API)
-- [ ] 1.4 Configurar estructura de carpetas del proyecto
-- [ ] 1.5 Crear tipos TypeScript para datos de API
-- [ ] 1.6 Configurar environment variables seguras
+### FASE 1: Configuración Base ✅
+- [x] 1.1 Configurar variables CSS con colores del diseño
+- [x] 1.2 Configurar fuentes Google (Cormorant Garamond + Inter)
+- [x] 1.3 Configurar Next.js para imágenes remotas (API)
+- [x] 1.4 Configurar estructura de carpetas del proyecto
+- [x] 1.5 Crear tipos TypeScript para datos de API
+- [x] 1.6 Configurar environment variables seguras
 
-### FASE 2: Internacionalización (i18n)
-- [ ] 2.1 Instalar y configurar next-intl
-- [ ] 2.2 Crear estructura de archivos de traducción (en/es)
-- [ ] 2.3 Configurar inglés como idioma por defecto
-- [ ] 2.4 Crear hook useTranslation personalizado
-- [ ] 2.5 Implementar selector de idioma
+### FASE 2: Internacionalización (i18n) ✅
+- [x] 2.1 Instalar y configurar next-intl
+- [x] 2.2 Crear estructura de archivos de traducción (en/es)
+- [x] 2.3 Configurar inglés como idioma por defecto
+- [x] 2.4 Configurar middleware y routing de idiomas
+- [x] 2.5 Implementar selector de idioma
 
-### FASE 3: API y Caché de Imágenes
-- [ ] 3.1 Crear servicio de API para consumo de piezas
-- [ ] 3.2 Implementar caché de imágenes en servidor (ISR)
-- [ ] 3.3 Crear API route para proxy de imágenes
-- [ ] 3.4 Optimizar carga con next/image y blur placeholder
-- [ ] 3.5 Implementar prefetch de imágenes críticas
+### FASE 3: API y Caché de Imágenes ✅
+- [x] 3.1 Crear servicio de API para consumo de piezas
+- [x] 3.2 Implementar caché de imágenes en servidor (ISR)
+- [x] 3.3 Crear API route para revalidación
+- [x] 3.4 Optimizar carga con next/image y blur placeholder
+- [x] 3.5 Implementar prefetch de imágenes críticas
 
 ### FASE 4: Componentes Base
 - [ ] 4.1 Crear componente Header con navegación
@@ -355,6 +355,40 @@ NEXT_PUBLIC_SITE_URL=https://receramica.com
 
 ## Progreso
 
-**Fase actual**: Fase 1 - Configuración Base
-**Completado**: 0%
-**Última actualización**: [Fecha inicio]
+**Fase actual**: Fase 4 - Componentes Base
+**Completado**: 25% (16/64 tareas)
+**Última actualización**: 2026-01-25
+
+### Archivos creados en Fase 3:
+- `app/api/pieces/route.ts` - API de listado de piezas con caché ISR
+- `app/api/pieces/[id]/route.ts` - API de detalle de pieza
+- `app/api/revalidate/route.ts` - API de revalidación de caché
+- `components/ui/OptimizedImage.tsx` - Imagen con blur placeholder y loading
+- `components/ui/Skeleton.tsx` - Skeletons para loading states
+- `hooks/useImagePrefetch.ts` - Hooks para prefetch de imágenes
+
+### Archivos creados en Fase 2:
+- `i18n/config.ts` - Configuración de locales (en, es)
+- `i18n/request.ts` - Configuración para server components
+- `i18n/messages/en.json` - Traducciones en inglés
+- `i18n/messages/es.json` - Traducciones en español
+- `middleware.ts` - Middleware para routing de idiomas
+- `app/[locale]/layout.tsx` - Layout con i18n y UIProvider
+- `app/[locale]/page.tsx` - Página principal con locale
+- `components/ui/LanguageSwitcher.tsx` - Selector de idioma
+
+### Archivos creados en Fase 1:
+- `app/globals.css` - Variables CSS y estilos base
+- `app/layout.tsx` - Configuración de fuentes y metadata SEO
+- `next.config.ts` - Configuración de imágenes y headers
+- `types/piece.ts` - Tipos de piezas cerámicas
+- `types/api.ts` - Tipos de respuestas API
+- `lib/constants.ts` - Constantes de la aplicación
+- `lib/utils.ts` - Funciones utilitarias
+- `lib/api.ts` - Cliente API
+- `lib/env.ts` - Variables de entorno tipadas
+- `context/UIContext.tsx` - Contexto global de UI
+- `hooks/useCarousel.ts` - Hook para carrusel
+- `hooks/usePieces.ts` - Hook para piezas
+- `hooks/useModal.ts` - Hook para modals
+- `.env.local` - Variables de entorno
