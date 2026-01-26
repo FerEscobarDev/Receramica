@@ -2107,6 +2107,602 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "F4xaU",
+      "x": 3080,
+      "y": 0,
+      "name": "Modal Detalle Pieza",
+      "reusable": true,
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "#1A1512F2",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "aAURa",
+          "x": 80,
+          "y": 60,
+          "name": "Modal Content",
+          "width": 1280,
+          "height": 780,
+          "fill": "$bg-clay",
+          "cornerRadius": 16,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#4A403540"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000080",
+            "offset": {
+              "x": 0,
+              "y": 24
+            },
+            "blur": 64
+          },
+          "gap": 40,
+          "padding": 40,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tm8TJ",
+              "name": "Image Gallery Column",
+              "width": 560,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jikV7",
+                  "name": "Main Image Container",
+                  "width": "fill_container",
+                  "height": 440,
+                  "fill": "$bg-warm",
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "33NDF",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Main Image",
+                      "width": 560,
+                      "height": 480,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1769389363641.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gNl60",
+                  "name": "Thumbnails Container",
+                  "width": "fill_container",
+                  "height": 100,
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZnV1Y",
+                      "name": "Nav Left",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#2A241F80",
+                      "cornerRadius": 18,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$terracotta"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "5h5bQ",
+                          "name": "navLeftIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "chevron-left",
+                          "iconFontFamily": "lucide",
+                          "fill": "$cream"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AXfDL",
+                      "name": "Thumbnails Row",
+                      "width": "fill_container",
+                      "height": 80,
+                      "gap": 12,
+                      "justifyContent": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "unEvT",
+                          "name": "Thumb 1",
+                          "width": 80,
+                          "height": 80,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./images/generated-1769389374459.png",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "$terracotta"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pFRf9",
+                          "name": "Thumb 2",
+                          "width": 80,
+                          "height": 80,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./images/generated-1769389380690.png",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#4A403540"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "yR7Xq",
+                          "name": "Thumb 3",
+                          "width": 80,
+                          "height": 80,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./images/generated-1769389391085.png",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#4A403540"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "4IPeT",
+                          "name": "Thumb 4",
+                          "width": 80,
+                          "height": 80,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./images/generated-1769389397365.png",
+                            "mode": "fill"
+                          },
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#4A403540"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ghzKC",
+                      "name": "Nav Right",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#2A241F80",
+                      "cornerRadius": 18,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "$terracotta"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "xcEa8",
+                          "name": "navRightIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "chevron-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "$cream"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "USpbI",
+                  "name": "Image Counter",
+                  "width": "fill_container",
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "r60AU",
+                      "name": "counterText",
+                      "fill": "$text-secondary",
+                      "content": "1 / 6",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NG3Vz",
+              "name": "Info Column",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lH0RC",
+                  "name": "Info Header",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "npMwJ",
+                      "name": "pieceLabel",
+                      "fill": "$terracotta",
+                      "content": "PIEZA ÚNICA",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500",
+                      "letterSpacing": 4
+                    },
+                    {
+                      "type": "text",
+                      "id": "PYZh3",
+                      "name": "pieceTitle",
+                      "fill": "$cream",
+                      "content": "Manganorhythmus spiralinex",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 42,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gSD1k",
+                      "name": "pieceMeta",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "8Yq4V",
+                          "name": "metaYear",
+                          "fill": "$text-secondary",
+                          "content": "2024",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "SiTpI",
+                          "name": "metaDot1",
+                          "fill": "$text-muted",
+                          "width": 4,
+                          "height": 4
+                        },
+                        {
+                          "type": "text",
+                          "id": "v3JDy",
+                          "name": "metaTechnique",
+                          "fill": "$text-secondary",
+                          "content": "Gres terracota",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "tnZOy",
+                          "name": "metaDot2",
+                          "fill": "$text-muted",
+                          "width": 4,
+                          "height": 4
+                        },
+                        {
+                          "type": "text",
+                          "id": "Sip7g",
+                          "name": "metaDimensions",
+                          "fill": "$text-secondary",
+                          "content": "28 × 22 × 18 cm",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "frssE",
+                  "name": "Divider",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#4A403540"
+                },
+                {
+                  "type": "frame",
+                  "id": "8kpWX",
+                  "name": "Description Container",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wAmhr",
+                      "name": "descLabel",
+                      "fill": "$terracotta",
+                      "content": "DESCRIPCIÓN",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ST4MZ",
+                      "name": "Description Scroll Area",
+                      "clip": true,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2OHyu",
+                          "name": "descText1",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Esta pieza escultórica, construida mediante la técnica de rollitos, presenta un diseño orgánico y fluido que combina dos tonos de gres terracota: uno natural y otro intensamente saturado con óxido de manganeso. Este contraste cromático genera un efecto visual de franjas alternadas que recorren todo su cuerpo, acentuando su textura tridimensional y resaltando los patrones geométricos que semejan escamas o facetas talladas.",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "m9chQ",
+                          "name": "descText2",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "La estructura general tiene una forma curvilínea que se alza desde una base estrecha, expandiéndose en una figura que podría asemejarse a una gota o una flama estilizada. En el centro de la pieza, un orificio circular, que recuerda a un ombligo, constituye un punto focal. Este &quot;ombligo&quot; está cuidadosamente esmaltado en un azul oscuro y profundo, casi negro, que crea un contraste impactante con el cuerpo terracota.",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xTJZO",
+                          "name": "descText3",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "La textura de la pieza es dinámica y rítmica, lograda mediante el tallado de los rollitos que la componen, formando un patrón continuo que amplifica la sensación de movimiento en la obra. La cocción a 1180°C en un ambiente de oxidación asegura la solidez del material.",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "2fUXW",
+                      "name": "Scroll Indicator",
+                      "width": "fill_container",
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "0GYy0",
+                          "name": "scrollIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "chevrons-down",
+                          "iconFontFamily": "lucide",
+                          "fill": "$text-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "UJv16",
+                          "name": "scrollText",
+                          "fill": "$text-muted",
+                          "content": "Desliza para ver más",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GXZGV",
+                  "name": "CTA Section",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": [
+                    24,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YeakO",
+                      "name": "CTA Divider",
+                      "width": "fill_container",
+                      "height": 1,
+                      "fill": "#4A403540"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "7i78X",
+                      "name": "CTA Content",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "padding": [
+                        16,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "g7AXg",
+                          "name": "ctaText",
+                          "fill": "$text-secondary",
+                          "content": "¿Te interesa esta pieza? Consulta disponibilidad y precio.",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "92ZU1",
+                          "name": "WhatsApp Button",
+                          "fill": "#25D366",
+                          "cornerRadius": 8,
+                          "gap": 12,
+                          "padding": [
+                            16,
+                            32
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "AYhVD",
+                              "name": "whatsappIcon",
+                              "width": 22,
+                              "height": 22,
+                              "iconFontName": "message-circle",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            },
+                            {
+                              "type": "text",
+                              "id": "N6PyT",
+                              "name": "whatsappText",
+                              "fill": "#FFFFFF",
+                              "content": "Solicitar información por WhatsApp",
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "A8DBR",
+          "x": 1320,
+          "y": 28,
+          "name": "Close Button",
+          "width": 56,
+          "height": 56,
+          "fill": "#1A1512E6",
+          "cornerRadius": 28,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$terracotta"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000060",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 24
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "hoUDV",
+              "name": "closeIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "x",
+              "iconFontFamily": "lucide",
+              "fill": "$cream"
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {
