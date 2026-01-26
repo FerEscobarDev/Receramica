@@ -4,6 +4,14 @@ import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { locales, type Locale } from "@/i18n/config";
 import { UIProvider } from "@/context/UIContext";
+import { ExpositionFullscreen } from "@/components/exposition";
+import { PieceModal } from "@/components/modal";
+import {
+  OrganizationJsonLd,
+  ArtistJsonLd,
+  ArtGalleryJsonLd,
+  WebsiteJsonLd,
+} from "@/components/seo";
 import type { Metadata } from "next";
 import "../globals.css";
 
@@ -142,8 +150,18 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
-          <UIProvider>{children}</UIProvider>
+          <UIProvider>
+            {children}
+            <ExpositionFullscreen />
+            <PieceModal />
+          </UIProvider>
         </NextIntlClientProvider>
+
+        {/* Structured Data */}
+        <OrganizationJsonLd />
+        <WebsiteJsonLd />
+        <ArtistJsonLd />
+        <ArtGalleryJsonLd />
       </body>
     </html>
   );

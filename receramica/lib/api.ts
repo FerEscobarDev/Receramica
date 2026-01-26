@@ -44,7 +44,7 @@ async function fetchApi<T>(
  * Obtiene todas las piezas
  */
 export async function getPieces(): Promise<PiecesListResponse> {
-  return fetchApi<PiecesListResponse>("/pieces", {
+  return fetchApi<PiecesListResponse>("/api/creaciones", {
     revalidate: CACHE_CONFIG.pieces,
     tags: ["pieces"],
   });

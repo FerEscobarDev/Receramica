@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { CACHE_CONFIG } from "@/lib/constants";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://ricardo-admin.receramica.com";
 const API_TOKEN = process.env.API_AUTH_TOKEN || "";
 
-export const revalidate = CACHE_CONFIG.pieces; // Revalidar cada hora
+// Revalidar cada hora (3600 segundos)
+export const revalidate = 3600;
 
 export async function GET() {
   try {
@@ -15,7 +15,7 @@ export async function GET() {
         ...(API_TOKEN && { Authorization: API_TOKEN }),
       },
       next: {
-        revalidate: CACHE_CONFIG.pieces,
+        revalidate: 3600,
         tags: ["pieces"],
       },
     });

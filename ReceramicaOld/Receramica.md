@@ -15,3 +15,87 @@ El taller de Ricardo Escobar es un centro de aprendizaje y creación. Este espac
 # La Esencia de la Materia
 
 El barro es el corazón de las creaciones de Ricardo Escobar. Utilizando una pasta cerámica elaborada con materias primas del altiplano cundiboyacense, sus piezas resultan ricas en información y textura. Esta alquimia entre cerámica y vidrio da vida a esculturas únicas, donde los esmaltes formulados en su propio taller interactúan con el barro para crear superficies distintivas. Cada pieza simboliza una búsqueda constante de influencias culturales y propuestas orgánicas nuevas e inspiradoras.
+
+[
+	{
+		"id": 1,
+		"created_at": "2024-09-30T15:23:51.000000Z",
+		"updated_at": "2024-09-30T16:21:03.000000Z",
+		"name": "Thalassa",
+		"description": "Esta pieza de gres blanco revela un cuidadoso juego de texturas y tonalidades, logrado mediante la incorporación de óxidos de hierro en diferentes proporciones. La técnica de construcción a partir de rollitos enfatiza las variaciones sutiles en la superficie, creando una lectura táctil y visual única. Cocida a 1080°C en un ambiente oxidante en Faenza, Italia, en 2014, esta obra captura la esencia de la cerámica contemporánea, fusionando tradición artesanal con una estética minimalista y experimental.",
+		"price": "5000000.00",
+		"quantity": 1,
+		"landing": 1,
+		"images": [
+			{
+				"id": 1,
+				"created_at": "2024-09-30T15:23:51.000000Z",
+				"updated_at": "2024-09-30T15:23:51.000000Z",
+				"product_id": 1,
+				"url": "creaciones_images/AyPbYeQGhvPVqPIbshc1u1BFZKnZlru3unKEYTQc.jpg",
+				"alt": "Thalassa",
+				"main": 1
+			},
+			{
+				"id": 2,
+				"created_at": "2024-09-30T15:23:51.000000Z",
+				"updated_at": "2024-09-30T15:23:51.000000Z",
+				"product_id": 1,
+				"url": "creaciones_images/nZYfRElU5QIRG7PjkvhibhUrRWFyBJ8gDTyHQmD0.jpg",
+				"alt": "Thalassa",
+				"main": 0
+			}
+		]
+	},
+	{
+		"id": 2,
+		"created_at": "2024-09-30T15:28:56.000000Z",
+		"updated_at": "2024-09-30T15:28:56.000000Z",
+		"name": "La Geva",
+		"description": "Escultura en terracota esmaltada, hecha en Faenza, Italia (2015). Formada a mano con rollitos de arcilla y cocida a 1000°C en ambiente oxidante. La pieza mezcla texturas naturales con el brillo del esmalte, creando un equilibrio entre lo orgánico y lo estructural.",
+		"price": "5000000.00",
+		"quantity": 1,
+		"landing": 1,
+		"images": [
+			{
+				"id": 3,
+				"created_at": "2024-09-30T15:28:56.000000Z",
+				"updated_at": "2024-09-30T15:28:56.000000Z",
+				"product_id": 2,
+				"url": "creaciones_images/w6VJrBDsZQnWB9yxNjyFTgoEcB8ZsYVfVi3NScc4.jpg",
+				"alt": "La Geva",
+				"main": 1
+			},
+			{
+				"id": 4,
+				"created_at": "2024-09-30T15:28:56.000000Z",
+				"updated_at": "2024-09-30T15:28:56.000000Z",
+				"product_id": 2,
+				"url": "creaciones_images/tSF5IUNMP0AxoFv3xsrzZ0hrWyPZQSknYB3CrbPr.jpg",
+				"alt": "La Geva",
+				"main": 0
+			}
+		]
+	}
+]
+
+[
+	{
+		"id": 1,
+		"created_at": "2024-09-30T15:23:51.000000Z",
+		"updated_at": "2024-09-30T15:23:51.000000Z",
+		"product_id": 1,
+		"url": "creaciones_images/AyPbYeQGhvPVqPIbshc1u1BFZKnZlru3unKEYTQc.jpg",
+		"alt": "Thalassa",
+		"main": 1
+	},
+	{
+		"id": 3,
+		"created_at": "2024-09-30T15:28:56.000000Z",
+		"updated_at": "2024-09-30T15:28:56.000000Z",
+		"product_id": 2,
+		"url": "creaciones_images/w6VJrBDsZQnWB9yxNjyFTgoEcB8ZsYVfVi3NScc4.jpg",
+		"alt": "La Geva",
+		"main": 1
+	}
+]

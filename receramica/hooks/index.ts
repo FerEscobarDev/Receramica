@@ -6,3 +6,4 @@ export {
   useViewportImagePrefetch,
   useCriticalImagePrefetch,
 } from "./useImagePrefetch";
+export { useScrollAnimation, useScrollStagger } from "./useScrollAnimation";

@@ -90,9 +90,12 @@
     "madeWith": "Hecho con pasión en Colombia"
   },
   "exposition": {
-    "title": "EXPOSICIÓN",
-    "artistName": "Ricardo Escobar",
-    "close": "Cerrar"
+    "label": "EXPOSICIÓN EXCLUSIVA",
+    "title": "Ricardo Escobar",
+    "subtitle": "Descubre la colección completa de piezas cerámicas únicas. Cada obra cuenta una historia de pasión, técnica y expresión artística.",
+    "close": "Cerrar",
+    "enterSite": "Entrar al sitio",
+    "scroll": "Desliza para explorar"
   },
   "modal": {
     "uniquePiece": "PIEZA ÚNICA",

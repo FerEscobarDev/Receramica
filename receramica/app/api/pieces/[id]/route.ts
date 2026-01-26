@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { CACHE_CONFIG } from "@/lib/constants";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://ricardo-admin.receramica.com";
 const API_TOKEN = process.env.API_AUTH_TOKEN || "";
 
-export const revalidate = CACHE_CONFIG.pieceDetail; // Revalidar cada 24 horas
+// Revalidar cada 24 horas (86400 segundos)
+export const revalidate = 86400;
 
 type RouteContext = {
   params: Promise<{ id: string }>;
@@ -29,7 +29,7 @@ export async function GET(
         ...(API_TOKEN && { Authorization: API_TOKEN }),
       },
       next: {
-        revalidate: CACHE_CONFIG.pieceDetail,
+        revalidate: 86400,
         tags: ["pieces", `piece-${id}`],
       },
     });
