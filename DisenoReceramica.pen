@@ -1,0 +1,2158 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "FFgUt",
+      "x": 0,
+      "y": 0,
+      "name": "Receramica Landing Page",
+      "width": 1440,
+      "fill": "$bg-earth",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "nEcpB",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 80,
+          "fill": "transparent",
+          "padding": [
+            0,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "W6joV",
+              "name": "logo",
+              "fill": "$cream",
+              "content": "RECERÁMICA",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 28,
+              "fontWeight": "600",
+              "letterSpacing": 4
+            },
+            {
+              "type": "frame",
+              "id": "g9RV7",
+              "name": "nav",
+              "gap": 48,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sEeOU",
+                  "name": "nav1",
+                  "fill": "$text-secondary",
+                  "content": "Galería",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "gghmA",
+                  "name": "nav2",
+                  "fill": "$text-secondary",
+                  "content": "El Artista",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "WwDCE",
+                  "name": "nav3",
+                  "fill": "$text-secondary",
+                  "content": "El Taller",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                },
+                {
+                  "type": "text",
+                  "id": "jZjgF",
+                  "name": "nav4",
+                  "fill": "$terracotta",
+                  "content": "Contacto",
+                  "fontFamily": "Inter",
+                  "fontSize": 14
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vSOWF",
+          "name": "Hero Section",
+          "width": "fill_container",
+          "height": 700,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1.5,
+              "height": 1.5
+            },
+            "colors": [
+              {
+                "color": "#3D352D",
+                "position": 0
+              },
+              {
+                "color": "#1A1512",
+                "position": 1
+              }
+            ],
+            "center": {
+              "y": 0.3
+            }
+          },
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            120,
+            80
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "pVtdg",
+              "name": "heroSubtitle",
+              "fill": "$terracotta",
+              "content": "CERÁMICA DE AUTOR",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "500",
+              "letterSpacing": 6
+            },
+            {
+              "type": "text",
+              "id": "uNJOR",
+              "name": "heroTitle",
+              "fill": "$cream",
+              "content": "Ricardo Escobar",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 120,
+              "fontWeight": "300",
+              "letterSpacing": 2
+            },
+            {
+              "type": "frame",
+              "id": "9NxND",
+              "name": "heroDivider",
+              "width": 120,
+              "height": 1,
+              "fill": "$terracotta"
+            },
+            {
+              "type": "text",
+              "id": "TdPpk",
+              "name": "heroDesc",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos",
+              "textAlign": "center",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 24
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bEgGD",
+          "name": "Gallery Section",
+          "width": "fill_container",
+          "fill": "$bg-clay",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "children": [
+            {
+              "type": "frame",
+              "id": "9rMbS",
+              "name": "galleryHeader",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cPATJ",
+                  "name": "galleryLabel",
+                  "fill": "$terracotta",
+                  "content": "EXPOSICIÓN",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "odzrO",
+                  "name": "galleryTitle",
+                  "fill": "$cream",
+                  "content": "Galería del Artista",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 48
+                },
+                {
+                  "type": "text",
+                  "id": "vlYPX",
+                  "name": "gallerySubtitle",
+                  "fill": "$text-secondary",
+                  "content": "Descubre cada pieza en una experiencia inmersiva",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "XOyjl",
+              "name": "3D Oval Slider",
+              "clip": true,
+              "width": "fill_container",
+              "height": 450,
+              "fill": "transparent",
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kWys7",
+                  "x": 0,
+                  "y": 163,
+                  "name": "Nav Arrow Left",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#2A241F80",
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$terracotta"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "NQFJC",
+                      "name": "arrowLeftIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "chevron-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "$cream"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "y8gTQ",
+                  "x": 1232,
+                  "y": 163,
+                  "name": "Nav Arrow Right",
+                  "width": 48,
+                  "height": 48,
+                  "fill": "#2A241F80",
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$terracotta"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "cVFWk",
+                      "name": "arrowRightIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "$cream"
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "u1QGL",
+                  "x": -60,
+                  "y": 280,
+                  "name": "Oval Depth BG",
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "radial",
+                    "enabled": true,
+                    "rotation": 0,
+                    "size": {
+                      "width": 1,
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#1A151580",
+                        "position": 0
+                      },
+                      {
+                        "color": "#1A151500",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 1400,
+                  "height": 200,
+                  "effect": {
+                    "type": "blur",
+                    "radius": 30
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "gmUAw",
+                  "x": 20,
+                  "y": 78,
+                  "name": "Slide Far Left",
+                  "opacity": 0.4,
+                  "width": 160,
+                  "height": 217,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387724513.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000060",
+                    "offset": {
+                      "x": 0,
+                      "y": 20
+                    },
+                    "blur": 40
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "hO0MT",
+                  "x": 222,
+                  "y": 46,
+                  "name": "Slide Left",
+                  "opacity": 0.7,
+                  "width": 220,
+                  "height": 287,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387706791.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000060",
+                    "offset": {
+                      "x": 0,
+                      "y": 25
+                    },
+                    "blur": 50
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "jvpgs",
+                  "x": 480,
+                  "y": 0,
+                  "name": "Slide Center - Featured",
+                  "width": 320,
+                  "height": 380,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387700756.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "$terracotta"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000080",
+                    "offset": {
+                      "x": 0,
+                      "y": 35
+                    },
+                    "blur": 70
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "lyzG7",
+                  "x": 838,
+                  "y": 46,
+                  "name": "Slide Right",
+                  "opacity": 0.7,
+                  "width": 220,
+                  "height": 289,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387718492.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000060",
+                    "offset": {
+                      "x": 0,
+                      "y": 25
+                    },
+                    "blur": 50
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "lEfDc",
+                  "x": 1100,
+                  "y": 78,
+                  "name": "Slide Far Right",
+                  "opacity": 0.4,
+                  "width": 160,
+                  "height": 227,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387739038.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000060",
+                    "offset": {
+                      "x": 0,
+                      "y": 20
+                    },
+                    "blur": 40
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Ppbiz",
+              "name": "Piece Info",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fJxYH",
+                  "name": "pieceName",
+                  "fill": "$cream",
+                  "content": "Vasija del Fénix",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "apz9U",
+                  "name": "pieceYear",
+                  "fill": "$text-secondary",
+                  "content": "2024 · Cerámica esmaltada · Pieza única",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UYYPu",
+              "name": "Carousel Dots",
+              "width": "fill_container",
+              "gap": 12,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "agb4P",
+                  "name": "dot1",
+                  "fill": "$text-muted",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "ellipse",
+                  "id": "ZxrzB",
+                  "name": "dot2",
+                  "fill": "$text-muted",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "ellipse",
+                  "id": "Z8FJY",
+                  "name": "dot3",
+                  "fill": "$terracotta",
+                  "width": 12,
+                  "height": 12
+                },
+                {
+                  "type": "ellipse",
+                  "id": "s2L5y",
+                  "name": "dot4",
+                  "fill": "$text-muted",
+                  "width": 8,
+                  "height": 8
+                },
+                {
+                  "type": "ellipse",
+                  "id": "iobft",
+                  "name": "dot5",
+                  "fill": "$text-muted",
+                  "width": 8,
+                  "height": 8
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "y8ELM",
+              "name": "Experience Button",
+              "fill": "transparent",
+              "cornerRadius": 40,
+              "stroke": {
+                "thickness": 2,
+                "fill": "$terracotta"
+              },
+              "gap": 12,
+              "padding": [
+                20,
+                48
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "CTS3A",
+                  "name": "expIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "maximize-2",
+                  "iconFontFamily": "lucide",
+                  "fill": "$terracotta"
+                },
+                {
+                  "type": "text",
+                  "id": "z2N0M",
+                  "name": "expText",
+                  "fill": "$terracotta",
+                  "content": "Vivir la Experiencia de la Exposición",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YLrQh",
+          "name": "Artist Section",
+          "width": "fill_container",
+          "fill": "$bg-earth",
+          "gap": 80,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "yPknN",
+              "name": "Artist Image",
+              "width": 480,
+              "height": 520,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1769386625764.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#4A403540"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "YsnFR",
+              "name": "Artist Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BCxHo",
+                  "name": "artistLabel",
+                  "fill": "$terracotta",
+                  "content": "EL ARTISTA",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "28lS3",
+                  "name": "artistTitle",
+                  "fill": "$cream",
+                  "content": "Ricardo Escobar",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 56
+                },
+                {
+                  "type": "text",
+                  "id": "gPZN4",
+                  "name": "artistDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Ricardo Escobar es un destacado artista cuya visión y creatividad se manifiestan en cada una de sus obras. Sus piezas no solo son productos de su habilidad técnica, sino también portadoras de su identidad y esencia, convirtiendo el diseño en una expresión personal y la artesanía en una firma inconfundible.",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                },
+                {
+                  "type": "text",
+                  "id": "HnfzH",
+                  "name": "artistDesc2",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Su objetivo es embellecer la vida de las personas, creando objetos que no solo adornan los espacios, sino que también generan nuevas experiencias estéticas y sensoriales.",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "62OIb",
+          "name": "Innovation Section",
+          "width": "fill_container",
+          "fill": "$bg-clay",
+          "layout": "vertical",
+          "gap": 60,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "f30Xm",
+              "name": "innovHeader",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "G3Ltc",
+                  "name": "innovLabel",
+                  "fill": "$terracotta",
+                  "content": "TÉCNICA Y VISIÓN",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "FhVR3",
+                  "name": "innovTitle",
+                  "fill": "$cream",
+                  "content": "Innovación y Maestría",
+                  "textAlign": "center",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 48
+                },
+                {
+                  "type": "text",
+                  "id": "JcH5k",
+                  "name": "innovDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "La técnica de Ricardo Escobar es el resultado de una exploración constante y desafiante. Su enfoque se centra en llevar al límite las posibilidades del material cerámico.",
+                  "lineHeight": 1.7,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cT5Bw",
+              "name": "featuresRow",
+              "width": "fill_container",
+              "gap": 32,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FK5OB",
+                  "name": "feat1",
+                  "width": 380,
+                  "fill": "$bg-warm",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rjaJp",
+                      "name": "feat1Title",
+                      "fill": "$cream",
+                      "content": "Resiliencia",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6gEA3",
+                      "name": "feat1Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "La obra refleja resiliencia, siendo al mismo tiempo frágil y fuerte, renaciendo como un Fénix en cada creación.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NjPgm",
+                  "name": "feat2",
+                  "width": 380,
+                  "fill": "$bg-warm",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sI853",
+                      "name": "feat2Title",
+                      "fill": "$cream",
+                      "content": "Emoción Perpetua",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "VJj0e",
+                      "name": "feat2Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos que conecta con el espectador.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mlKfO",
+                  "name": "feat3",
+                  "width": 380,
+                  "fill": "$bg-warm",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  },
+                  "layout": "vertical",
+                  "gap": 20,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pwJBL",
+                      "name": "feat3Title",
+                      "fill": "$cream",
+                      "content": "Originalidad",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 28,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NSiho",
+                      "name": "feat3Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Una fusión de originalidad y creatividad, ofreciendo un lujo que respeta la función mientras celebra la imagen.",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "iavc4",
+          "name": "Workshop Section",
+          "width": "fill_container",
+          "fill": "$bg-earth",
+          "gap": 80,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "SS3SO",
+              "name": "tallerContent",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TeWu2",
+                  "name": "tallerLabel",
+                  "fill": "$terracotta",
+                  "content": "EL SANTUARIO CREATIVO",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "c9u2g",
+                  "name": "tallerTitle",
+                  "fill": "$cream",
+                  "content": "El Taller",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 56
+                },
+                {
+                  "type": "text",
+                  "id": "CcBHD",
+                  "name": "tallerDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "El taller de Ricardo Escobar es un centro de aprendizaje y creación. Este espacio está dedicado al desarrollo de proyectos cerámicos que no solo son hermosos, sino también significativos.",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "CnFAy",
+                  "name": "tallerDesc2",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Aquí, los asistentes encuentran un medio para la expresión personal y la mejora técnica, explorando todos los aspectos del proceso cerámico. El taller promueve la reflexión y el autocuidado, proporcionando un entorno donde la creatividad florece.",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vjNHy",
+              "name": "Workshop Image",
+              "width": 480,
+              "height": 400,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1769386632433.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#4A403540"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qNZZj",
+          "name": "Essence Section",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#3D352D",
+                "position": 0
+              },
+              {
+                "color": "#1A1512",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 60,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "S6WEW",
+              "name": "essenceHeader",
+              "width": 900,
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RclOT",
+                  "name": "essenceLabel",
+                  "fill": "$terracotta",
+                  "content": "LA ESENCIA",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "HUwUi",
+                  "name": "essenceTitle",
+                  "fill": "$cream",
+                  "content": "El Corazón del Barro",
+                  "textAlign": "center",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 48
+                },
+                {
+                  "type": "text",
+                  "id": "WytQD",
+                  "name": "essenceDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "El barro es el corazón de las creaciones de Ricardo Escobar. Utilizando una pasta cerámica elaborada con materias primas del altiplano cundiboyacense, sus piezas resultan ricas en información y textura.",
+                  "lineHeight": 1.7,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8pKOx",
+              "name": "materialsRow",
+              "width": "fill_container",
+              "gap": 48,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "3PZw1",
+                  "name": "mat1",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "y4inz",
+                      "name": "mat1Circle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "radial",
+                        "enabled": true,
+                        "rotation": 0,
+                        "size": {
+                          "width": 1,
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#8B7A6D",
+                            "position": 0
+                          },
+                          {
+                            "color": "#5A4F45",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "width": 100,
+                      "height": 100,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "$terracotta"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "Pszj4",
+                      "name": "mat1Title",
+                      "fill": "$cream",
+                      "content": "Arcilla Cundiboyacense",
+                      "textAlign": "center",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6yodX",
+                      "name": "mat1Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Materias primas del altiplano que dan vida a texturas únicas",
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "e6qBx",
+                  "name": "mat2",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "mL2Mr",
+                      "name": "mat2Circle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "radial",
+                        "enabled": true,
+                        "rotation": 0,
+                        "size": {
+                          "width": 1,
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#C9725A",
+                            "position": 0
+                          },
+                          {
+                            "color": "#8B4D3A",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "width": 100,
+                      "height": 100,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "$gold-earth"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "vkkA1",
+                      "name": "mat2Title",
+                      "fill": "$cream",
+                      "content": "Esmaltes Artesanales",
+                      "textAlign": "center",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gVIq9",
+                      "name": "mat2Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Formulados en el taller para crear superficies distintivas",
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "omVCN",
+                  "name": "mat3",
+                  "width": 280,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "HyBmP",
+                      "name": "mat3Circle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "radial",
+                        "enabled": true,
+                        "rotation": 0,
+                        "size": {
+                          "width": 1,
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#B8956D",
+                            "position": 0
+                          },
+                          {
+                            "color": "#7A6A5D",
+                            "position": 1
+                          }
+                        ]
+                      },
+                      "width": 100,
+                      "height": 100,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "$cream"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "bnT9z",
+                      "name": "mat3Title",
+                      "fill": "$cream",
+                      "content": "Alquimia Cerámica",
+                      "textAlign": "center",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 22,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zVB8g",
+                      "name": "mat3Desc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "La fusión entre cerámica y vidrio en esculturas únicas",
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JQhhm",
+          "name": "CTA Section",
+          "width": "fill_container",
+          "fill": "$bg-clay",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            100,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "LCJmx",
+              "name": "ctaTitle",
+              "fill": "$cream",
+              "content": "¿Listo para descubrir tu pieza única?",
+              "textAlign": "center",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 48
+            },
+            {
+              "type": "text",
+              "id": "gWfp9",
+              "name": "ctaDesc",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Cada obra de Ricardo Escobar es irrepetible. Contacta para conocer las piezas disponibles o encargar una creación personalizada.",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "CYi5d",
+              "name": "ctaButtons",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zM7EC",
+                  "name": "ctaBtn1",
+                  "fill": "$terracotta",
+                  "cornerRadius": 4,
+                  "padding": [
+                    18,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "UOpmT",
+                      "name": "ctaBtn1Text",
+                      "fill": "$cream",
+                      "content": "Ver Galería Completa",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Dlb87",
+                  "name": "ctaBtn2",
+                  "fill": "transparent",
+                  "cornerRadius": 4,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$terracotta"
+                  },
+                  "padding": [
+                    18,
+                    40
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "syxX8",
+                      "name": "ctaBtn2Text",
+                      "fill": "$terracotta",
+                      "content": "Contactar al Artista",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YDNUC",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "$bg-earth",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            60,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "KMXKI",
+              "name": "footerMain",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lOwEl",
+                  "name": "footerBrand",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XUei4",
+                      "name": "footerLogo",
+                      "fill": "$cream",
+                      "content": "RECERÁMICA",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 24,
+                      "fontWeight": "600",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "16W4I",
+                      "name": "footerTagline",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Cerámica de autor por Ricardo Escobar. Cada pieza, una historia única.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Bcnfp",
+                  "name": "footerNav",
+                  "gap": 80,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NnDDl",
+                      "name": "footerCol1",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vooZ1",
+                          "name": "footerCol1Title",
+                          "fill": "$terracotta",
+                          "content": "Navegación",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "CtDTf",
+                          "name": "footerCol1Link1",
+                          "fill": "$text-secondary",
+                          "content": "Galería",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "am7ZJ",
+                          "name": "footerCol1Link2",
+                          "fill": "$text-secondary",
+                          "content": "El Artista",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ajYNK",
+                          "name": "footerCol1Link3",
+                          "fill": "$text-secondary",
+                          "content": "El Taller",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VIEDl",
+                      "name": "footerCol2",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6H67z",
+                          "name": "footerCol2Title",
+                          "fill": "$terracotta",
+                          "content": "Contacto",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "8UVOK",
+                          "name": "footerCol2Link1",
+                          "fill": "$text-secondary",
+                          "content": "info@receramica.com",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3HrHu",
+                          "name": "footerCol2Link2",
+                          "fill": "$text-secondary",
+                          "content": "Bogotá, Colombia",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "U8OJ8",
+                      "name": "footerCol3",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "BM38m",
+                          "name": "footerCol3Title",
+                          "fill": "$terracotta",
+                          "content": "Síguenos",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "text",
+                          "id": "NL2NA",
+                          "name": "footerCol3Link1",
+                          "fill": "$text-secondary",
+                          "content": "Instagram",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "17abR",
+                          "name": "footerCol3Link2",
+                          "fill": "$text-secondary",
+                          "content": "Facebook",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Pd8OV",
+              "name": "footerDivider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#3D352D"
+            },
+            {
+              "type": "frame",
+              "id": "WOrea",
+              "name": "footerBottom",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KpI0O",
+                  "name": "copyright",
+                  "fill": "$text-muted",
+                  "content": "© 2024 Recerámica. Todos los derechos reservados.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "g4R8h",
+                  "name": "madeWith",
+                  "fill": "$text-muted",
+                  "content": "Hecho con pasión en Colombia",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ro0wX",
+      "x": 1540,
+      "y": 0,
+      "name": "Exposición Fullscreen",
+      "clip": true,
+      "width": 1440,
+      "height": 900,
+      "fill": "$bg-earth",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "A9bNx",
+          "x": 0,
+          "y": 0,
+          "name": "Dark Overlay",
+          "width": 1440,
+          "height": 900,
+          "fill": {
+            "type": "gradient",
+            "gradientType": "radial",
+            "enabled": true,
+            "rotation": 0,
+            "size": {
+              "width": 1.5,
+              "height": 1.5
+            },
+            "colors": [
+              {
+                "color": "#1A151500",
+                "position": 0
+              },
+              {
+                "color": "#1A1512",
+                "position": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "frame",
+          "id": "JxA1O",
+          "x": 0,
+          "y": 0,
+          "name": "Tiles Grid Fullscreen",
+          "width": 1440,
+          "height": 900,
+          "gap": 12,
+          "padding": 12,
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "4gEK7",
+              "name": "Column 1",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "TOI2h",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 280,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387805651.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "Z76vx",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387811698.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "AxpRY",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 380,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387822521.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nP4tn",
+              "name": "Column 2",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qv6Xk",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387828847.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "hK7Mt",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 320,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387839543.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "6kT5G",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 240,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387845805.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K36UA",
+              "name": "Column 3",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0igj5",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 340,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387857843.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "4vWMP",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 260,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387864023.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "qmKlv",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 260,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387875292.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Y2YQ5",
+              "name": "Column 4",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HvPy1",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 240,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387881365.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "sFqFR",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 280,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387893510.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "scf1r",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 340,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387899885.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ehPJB",
+              "name": "Column 5",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zJATH",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 320,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387911721.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "2bCVp",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 200,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387917915.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "xjBFr",
+                  "name": "Tile",
+                  "width": 280,
+                  "height": 340,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769387928376.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 4,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 16
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RY0Pi",
+          "x": 1356,
+          "y": 28,
+          "name": "Close Button Floating",
+          "width": 56,
+          "height": 56,
+          "fill": "#1A1512E6",
+          "cornerRadius": 28,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$terracotta"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000060",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 24
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "Ob0ju",
+              "name": "closeIcon",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "x",
+              "iconFontFamily": "lucide",
+              "fill": "$cream"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CXvjt",
+          "x": 28,
+          "y": 28,
+          "name": "Title Overlay",
+          "width": 300,
+          "layout": "vertical",
+          "gap": 4,
+          "children": [
+            {
+              "type": "text",
+              "id": "e22sw",
+              "name": "expoTitle",
+              "fill": "$terracotta",
+              "content": "EXPOSICIÓN",
+              "fontFamily": "Inter",
+              "fontSize": 10,
+              "fontWeight": "500",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "0mloZ",
+              "name": "expoName",
+              "fill": "$cream",
+              "content": "Ricardo Escobar",
+              "fontFamily": "Cormorant Garamond",
+              "fontSize": 28
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg-clay": {
+      "type": "color",
+      "value": "#2A241F"
+    },
+    "bg-earth": {
+      "type": "color",
+      "value": "#1A1512"
+    },
+    "bg-warm": {
+      "type": "color",
+      "value": "#3D352D"
+    },
+    "cream": {
+      "type": "color",
+      "value": "#E8DFD5"
+    },
+    "gold-earth": {
+      "type": "color",
+      "value": "#B8956D"
+    },
+    "sand": {
+      "type": "color",
+      "value": "#B8A898"
+    },
+    "terracotta": {
+      "type": "color",
+      "value": "#C9725A"
+    },
+    "terracotta-dark": {
+      "type": "color",
+      "value": "#8B4D3A"
+    },
+    "text-muted": {
+      "type": "color",
+      "value": "#6E6058"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#F5EDE5"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#A89888"
+    }
+  }
+}
