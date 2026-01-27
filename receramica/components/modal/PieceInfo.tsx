@@ -7,6 +7,7 @@ import type { Piece } from "@/types";
 
 interface PieceInfoProps {
   piece: Piece;
+  isLoading?: boolean;
 }
 
 // WhatsApp icon component
@@ -24,7 +25,7 @@ function WhatsAppIcon() {
   );
 }
 
-export function PieceInfo({ piece }: PieceInfoProps) {
+export function PieceInfo({ piece, isLoading = false }: PieceInfoProps) {
   const t = useTranslations("modal");
   const descriptionRef = useRef<HTMLDivElement>(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
@@ -97,13 +98,23 @@ export function PieceInfo({ piece }: PieceInfoProps) {
             "scrollbar-thin scrollbar-track-transparent scrollbar-thumb-text-muted/30"
           )}
         >
-          <p className="text-text-secondary font-body leading-relaxed whitespace-pre-line">
-            {piece.description_extended || piece.description || "No description available."}
-          </p>
+          {isLoading ? (
+            <div className="space-y-3 animate-pulse">
+              <div className="h-4 bg-text-muted/20 rounded w-full" />
+              <div className="h-4 bg-text-muted/20 rounded w-11/12" />
+              <div className="h-4 bg-text-muted/20 rounded w-10/12" />
+              <div className="h-4 bg-text-muted/20 rounded w-full" />
+              <div className="h-4 bg-text-muted/20 rounded w-9/12" />
+            </div>
+          ) : (
+            <p className="text-text-secondary font-body leading-relaxed whitespace-pre-line">
+              {piece.description_extended || piece.description || "No description available."}
+            </p>
+          )}
         </div>
 
         {/* Scroll indicator */}
-        {showScrollIndicator && (
+        {showScrollIndicator && !isLoading && (
           <div className="absolute bottom-0 left-0 right-4 h-12 pointer-events-none bg-gradient-to-t from-bg-warm to-transparent flex items-end justify-center pb-2">
             <span className="text-text-muted text-xs animate-pulse-subtle">
               {t("scrollMore")}

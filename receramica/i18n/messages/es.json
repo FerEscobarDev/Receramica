@@ -104,7 +104,8 @@
     "interested": "¿Te interesa esta pieza? Consulta disponibilidad y precio.",
     "whatsappButton": "Consultar por WhatsApp",
     "close": "Cerrar",
-    "imageCounter": "{current} / {total}"
+    "imageCounter": "{current} / {total}",
+    "loading": "Cargando..."
   },
   "common": {
     "loading": "Cargando...",

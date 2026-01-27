@@ -104,7 +104,8 @@
     "interested": "Interested in this piece? Check availability and price.",
     "whatsappButton": "Inquire via WhatsApp",
     "close": "Close",
-    "imageCounter": "{current} / {total}"
+    "imageCounter": "{current} / {total}",
+    "loading": "Loading..."
   },
   "common": {
     "loading": "Loading...",

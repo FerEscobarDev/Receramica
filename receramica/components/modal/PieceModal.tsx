@@ -7,6 +7,7 @@ import { CloseIcon } from "@/components/ui/IconButton";
 import { ImageGallery } from "./ImageGallery";
 import { PieceInfo } from "./PieceInfo";
 import { useUI } from "@/context/UIContext";
+import { usePieceDetail } from "@/hooks";
 
 export function PieceModal() {
   const t = useTranslations("modal");
@@ -15,6 +16,14 @@ export function PieceModal() {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // Cargar datos completos de la pieza cuando se abre el modal
+  const { piece: fullPieceData, isLoading: isLoadingDetail } = usePieceDetail(
+    isModalOpen && selectedPiece ? selectedPiece.id : null
+  );
+
+  // Usar datos completos si están disponibles, sino usar los datos parciales
+  const pieceToShow = fullPieceData || selectedPiece;
 
   // Handle animation states
   useEffect(() => {
@@ -84,7 +93,7 @@ export function PieceModal() {
     return null;
   }
 
-  if (!selectedPiece) {
+  if (!pieceToShow) {
     return null;
   }
 
@@ -147,20 +156,20 @@ export function PieceModal() {
         </button>
 
         {/* Modal body - 2 columns on desktop */}
-        <div className="flex flex-col md:flex-row h-full max-h-[90vh]">
+        <div className="flex flex-col md:flex-row h-full max-h-[90vh] min-h-[500px]">
           {/* Left column - Image gallery */}
           <div className="md:w-1/2 p-6 md:p-8 bg-bg-clay/50">
-            <div className="h-[300px] md:h-full">
+            <div className="h-[300px] md:h-full min-h-[300px]">
               <ImageGallery
-                images={selectedPiece.images}
-                pieceName={selectedPiece.name}
+                images={pieceToShow.images}
+                pieceName={pieceToShow.name}
               />
             </div>
           </div>
 
           {/* Right column - Piece info */}
-          <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[400px] md:max-h-none">
-            <PieceInfo piece={selectedPiece} />
+          <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[400px] md:max-h-none min-h-[200px]">
+            <PieceInfo piece={pieceToShow} isLoading={isLoadingDetail} />
           </div>
         </div>
       </div>
