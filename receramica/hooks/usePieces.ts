@@ -5,7 +5,6 @@ import type { PieceSummary, Piece } from "@/types";
 
 interface UsePiecesReturn {
   pieces: PieceSummary[];
-  featuredPieces: PieceSummary[];
   isLoading: boolean;
   error: string | null;
   refetch: () => Promise<void>;
@@ -22,7 +21,6 @@ interface UsePieceDetailReturn {
  */
 export function usePieces(): UsePiecesReturn {
   const [pieces, setPieces] = useState<PieceSummary[]>([]);
-  const [featuredPieces, setFeaturedPieces] = useState<PieceSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,7 +34,6 @@ export function usePieces(): UsePiecesReturn {
 
       const data = await response.json();
       setPieces(data.pieces || []);
-      setFeaturedPieces(data.featured || []);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
@@ -50,7 +47,6 @@ export function usePieces(): UsePiecesReturn {
 
   return {
     pieces,
-    featuredPieces,
     isLoading,
     error,
     refetch: fetchPieces,

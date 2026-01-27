@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server";
+import type { Creacion, CreacionImage } from "@/types";
+import { buildImageUrl } from "@/lib/transformers";
+import environment from "@/environment";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://ricardo-admin.receramica.com";
-const API_TOKEN = process.env.API_AUTH_TOKEN || "";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || environment.urlBaseApi;
+const API_TOKEN = process.env.API_AUTH_TOKEN || environment.authToken;
 
 // Revalidar cada hora (3600 segundos)
 export const revalidate = 3600;
 
 export async function GET() {
   try {
-    const response = await fetch(`${API_URL}/api/pieces`, {
+    const response = await fetch(`${API_URL}/api/creaciones`, {
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
@@ -24,44 +27,32 @@ export async function GET() {
       throw new Error(`API responded with status: ${response.status}`);
     }
 
-    const data = await response.json();
+    const data: Creacion[] = await response.json();
 
-    // Transformar datos para el frontend
-    const pieces = Array.isArray(data.data) ? data.data : (Array.isArray(data) ? data : []);
-
-    // Separar piezas destacadas
-    const featured = pieces.filter((p: { featured?: boolean }) => p.featured);
+    // El API retorna un array directo
+    const creaciones = Array.isArray(data) ? data : [];
 
     // Mapear para incluir URL completa de imagen
-    const mappedPieces = pieces.map((piece: {
-      id: number;
-      name: string;
-      slug?: string;
-      year?: number;
-      technique?: string;
-      dimensions?: string;
-      description?: string;
-      images?: Array<{ url: string; is_main?: boolean }>;
-      main_image?: string;
-      featured?: boolean;
-      available?: boolean;
-    }) => ({
-      id: piece.id,
-      name: piece.name,
-      slug: piece.slug || `piece-${piece.id}`,
-      year: piece.year || new Date().getFullYear(),
-      technique: piece.technique || "Cerámica",
-      dimensions: piece.dimensions || "",
-      description: piece.description || "",
-      main_image: getMainImage(piece),
-      featured: piece.featured || false,
-      available: piece.available !== false,
+    const mappedPieces = creaciones.map((creacion: Creacion) => ({
+      id: creacion.id,
+      name: creacion.name,
+      slug: `piece-${creacion.id}`,
+      year: 2025,
+      technique: "Cerámica",
+      dimensions: "",
+      description: creacion.description,
+      main_image: getMainImage(creacion.images),
+      featured: creacion.landing === 1,
+      available: creacion.quantity > 0,
     }));
+
+    // Filtrar piezas para landing
+    const featured = mappedPieces.filter((p) => p.featured);
 
     return NextResponse.json({
       success: true,
       pieces: mappedPieces,
-      featured: mappedPieces.filter((p: { featured: boolean }) => p.featured),
+      featured,
       total: mappedPieces.length,
     }, {
       headers: {
@@ -84,27 +75,12 @@ export async function GET() {
   }
 }
 
-function getMainImage(piece: {
-  images?: Array<{ url: string; is_main?: boolean }>;
-  main_image?: string;
-}): string {
-  const baseUrl = API_URL;
-
-  // Si tiene array de imágenes, buscar la principal
-  if (piece.images && piece.images.length > 0) {
-    const mainImg = piece.images.find(img => img.is_main) || piece.images[0];
-    const imgUrl = mainImg.url;
-
-    if (imgUrl.startsWith("http")) return imgUrl;
-    return `${baseUrl}/storage/${imgUrl}`;
+function getMainImage(images: CreacionImage[]): string {
+  if (!images || images.length === 0) {
+    return "/Images/placeholder.jpg";
   }
 
-  // Si tiene main_image directamente
-  if (piece.main_image) {
-    if (piece.main_image.startsWith("http")) return piece.main_image;
-    return `${baseUrl}/storage/${piece.main_image}`;
-  }
-
-  // Placeholder
-  return "/Images/placeholder.jpg";
+  // Buscar imagen principal (main === 1)
+  const mainImg = images.find((img) => img.main === 1) || images[0];
+  return buildImageUrl(mainImg.url);
 }

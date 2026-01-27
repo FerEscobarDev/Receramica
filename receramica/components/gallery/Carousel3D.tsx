@@ -5,14 +5,9 @@ import { cn } from "@/lib/utils";
 import { IconButton, ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/IconButton";
 import { CarouselSlide, SlidePosition } from "./CarouselSlide";
 import { CarouselDots } from "./CarouselDots";
+import type { CarouselPiece } from "@/types";
 
-export interface CarouselPiece {
-  id: number;
-  name: string;
-  year: number;
-  technique: string;
-  image: string;
-}
+export type { CarouselPiece };
 
 interface Carousel3DProps {
   pieces: CarouselPiece[];
@@ -154,7 +149,7 @@ export function Carousel3D({
             {currentPiece.name}
           </h3>
           <p className="text-text-secondary font-body text-sm animate-fade-in animation-delay-100">
-            {currentPiece.year} · {currentPiece.technique}
+            {currentPiece.year || 2025} · {currentPiece.technique}
           </p>
         </div>
       )}

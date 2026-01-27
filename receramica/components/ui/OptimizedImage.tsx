@@ -88,48 +88,51 @@ export function OptimizedImage({
   return (
     <div
       className={cn(
-        "relative overflow-hidden",
-        fill ? "absolute inset-0" : "",
+        "overflow-hidden",
+        fill ? "absolute inset-0" : "relative",
         containerClassName
       )}
       style={!fill ? { width, height } : undefined}
       onClick={onClick}
     >
-      {/* Skeleton loader */}
-      {isLoading && showSkeleton && (
-        <div
-          className={cn(
-            "absolute inset-0 bg-bg-warm animate-pulse",
-            "after:absolute after:inset-0",
-            "after:bg-gradient-to-r after:from-transparent after:via-bg-clay/30 after:to-transparent",
-            "after:animate-shimmer"
-          )}
-        />
-      )}
-
-      <Image
-        src={src}
-        alt={alt}
-        {...(fill
-          ? { fill: true }
-          : { width: width || 400, height: height || 400 })}
-        priority={priority}
-        quality={quality}
-        sizes={sizes}
-        placeholder="blur"
-        blurDataURL={BLUR_DATA_URL}
-        className={cn(
-          "transition-opacity duration-500",
-          isLoading ? "opacity-0" : "opacity-100",
-          objectFit === "cover" && "object-cover",
-          objectFit === "contain" && "object-contain",
-          objectFit === "fill" && "object-fill",
-          onClick && "cursor-pointer",
-          className
+      {/* Wrapper interno para establecer contexto de posicionamiento para Image con fill */}
+      <div className="relative w-full h-full">
+        {/* Skeleton loader */}
+        {isLoading && showSkeleton && (
+          <div
+            className={cn(
+              "absolute inset-0 bg-bg-warm animate-pulse",
+              "after:absolute after:inset-0",
+              "after:bg-gradient-to-r after:from-transparent after:via-bg-clay/30 after:to-transparent",
+              "after:animate-shimmer"
+            )}
+          />
         )}
-        onLoad={handleLoad}
-        onError={handleError}
-      />
+
+        <Image
+          src={src}
+          alt={alt}
+          {...(fill
+            ? { fill: true }
+            : { width: width || 400, height: height || 400 })}
+          priority={priority}
+          quality={quality}
+          sizes={sizes}
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+          className={cn(
+            "transition-opacity duration-500",
+            isLoading ? "opacity-0" : "opacity-100",
+            objectFit === "cover" && "object-cover",
+            objectFit === "contain" && "object-contain",
+            objectFit === "fill" && "object-fill",
+            onClick && "cursor-pointer",
+            className
+          )}
+          onLoad={handleLoad}
+          onError={handleError}
+        />
+      </div>
     </div>
   );
 }

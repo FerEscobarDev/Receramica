@@ -1,14 +1,20 @@
 import type {
-  ApiResponse,
-  PiecesListResponse,
-  PieceDetailResponse,
-  FeaturedPiecesResponse,
+  CreacionesResponse,
+  CreacionDetailResponse,
+  CarouselImagesResponse,
   FetchOptions,
 } from "@/types";
+import type { Piece, PieceSummary, CarouselPiece } from "@/types";
 import { CACHE_CONFIG } from "./constants";
+import {
+  transformCreacion,
+  transformCreacionToSummary,
+  transformCarouselImage,
+} from "./transformers";
+import environment from "@/environment";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://ricardo-admin.receramica.com";
-const API_TOKEN = process.env.API_AUTH_TOKEN || "";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || environment.urlBaseApi;
+const API_TOKEN = process.env.API_AUTH_TOKEN || environment.authToken;
 
 /**
  * Cliente base para peticiones a la API
@@ -41,43 +47,51 @@ async function fetchApi<T>(
 }
 
 /**
- * Obtiene todas las piezas
+ * Obtiene todas las creaciones y las transforma a Pieces
  */
-export async function getPieces(): Promise<PiecesListResponse> {
-  return fetchApi<PiecesListResponse>("/api/creaciones", {
+export async function getPieces(): Promise<Piece[]> {
+  const creaciones = await fetchApi<CreacionesResponse>("/creaciones", {
     revalidate: CACHE_CONFIG.pieces,
     tags: ["pieces"],
   });
+
+  return creaciones.map(transformCreacion);
 }
 
 /**
- * Obtiene piezas destacadas para el carrusel
+ * Obtiene todas las creaciones como PieceSummary para listados
  */
-export async function getFeaturedPieces(): Promise<FeaturedPiecesResponse> {
-  return fetchApi<FeaturedPiecesResponse>("/pieces/featured", {
+export async function getPiecesSummary(): Promise<PieceSummary[]> {
+  const creaciones = await fetchApi<CreacionesResponse>("/creaciones", {
     revalidate: CACHE_CONFIG.pieces,
-    tags: ["pieces", "featured"],
+    tags: ["pieces"],
   });
-}
 
-/**
- * Obtiene el detalle de una pieza por slug
- */
-export async function getPieceBySlug(slug: string): Promise<PieceDetailResponse> {
-  return fetchApi<PieceDetailResponse>(`/pieces/${slug}`, {
-    revalidate: CACHE_CONFIG.pieceDetail,
-    tags: ["pieces", `piece-${slug}`],
-  });
+  return creaciones.map(transformCreacionToSummary);
 }
 
 /**
  * Obtiene el detalle de una pieza por ID
  */
-export async function getPieceById(id: number): Promise<PieceDetailResponse> {
-  return fetchApi<PieceDetailResponse>(`/pieces/id/${id}`, {
+export async function getPieceById(id: number): Promise<Piece> {
+  const creacion = await fetchApi<CreacionDetailResponse>(`/creaciones/${id}`, {
     revalidate: CACHE_CONFIG.pieceDetail,
     tags: ["pieces", `piece-${id}`],
   });
+
+  return transformCreacion(creacion);
+}
+
+/**
+ * Obtiene las imágenes para el carrusel
+ */
+export async function getCarouselImages(): Promise<CarouselPiece[]> {
+  const images = await fetchApi<CarouselImagesResponse>("/images", {
+    revalidate: CACHE_CONFIG.pieces,
+    tags: ["carousel"],
+  });
+
+  return images.map(transformCarouselImage);
 }
 
 /**

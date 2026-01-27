@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import type { Creacion } from "@/types";
+import { transformCreacion } from "@/lib/transformers";
+import environment from "@/environment";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://ricardo-admin.receramica.com";
-const API_TOKEN = process.env.API_AUTH_TOKEN || "";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || environment.urlBaseApi;
+const API_TOKEN = process.env.API_AUTH_TOKEN || environment.authToken;
 
 // Revalidar cada 24 horas (86400 segundos)
 export const revalidate = 86400;
@@ -17,12 +20,16 @@ export async function GET(
   try {
     const { id } = await context.params;
 
-    // Intentar buscar por ID o por slug
-    const endpoint = isNaN(Number(id))
-      ? `${API_URL}/api/pieces/slug/${id}`
-      : `${API_URL}/api/pieces/${id}`;
+    // Solo soportamos búsqueda por ID numérico
+    const numericId = Number(id);
+    if (isNaN(numericId)) {
+      return NextResponse.json({
+        success: false,
+        error: "Invalid piece ID",
+      }, { status: 400 });
+    }
 
-    const response = await fetch(endpoint, {
+    const response = await fetch(`${API_URL}/api/creaciones/${numericId}`, {
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
@@ -44,29 +51,12 @@ export async function GET(
       throw new Error(`API responded with status: ${response.status}`);
     }
 
-    const data = await response.json();
-    const piece = data.data || data;
-
-    // Transformar y enriquecer datos
-    const enrichedPiece = {
-      id: piece.id,
-      name: piece.name,
-      slug: piece.slug || `piece-${piece.id}`,
-      year: piece.year || new Date().getFullYear(),
-      technique: piece.technique || "Cerámica",
-      dimensions: piece.dimensions || "",
-      description: piece.description || "",
-      description_extended: piece.description_extended || piece.description || "",
-      images: mapImages(piece.images || []),
-      featured: piece.featured || false,
-      available: piece.available !== false,
-      created_at: piece.created_at,
-      updated_at: piece.updated_at,
-    };
+    const creacion: Creacion = await response.json();
+    const piece = transformCreacion(creacion);
 
     return NextResponse.json({
       success: true,
-      piece: enrichedPiece,
+      piece,
     }, {
       headers: {
         "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
@@ -82,28 +72,4 @@ export async function GET(
       status: 500,
     });
   }
-}
-
-function mapImages(images: Array<{
-  id?: number;
-  url: string;
-  alt?: string;
-  order?: number;
-  is_main?: boolean;
-}>): Array<{
-  id: number;
-  url: string;
-  alt: string;
-  order: number;
-  is_main: boolean;
-}> {
-  const baseUrl = API_URL;
-
-  return images.map((img, index) => ({
-    id: img.id || index,
-    url: img.url.startsWith("http") ? img.url : `${baseUrl}/storage/${img.url}`,
-    alt: img.alt || "",
-    order: img.order || index,
-    is_main: img.is_main || index === 0,
-  }));
 }

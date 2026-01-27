@@ -120,7 +120,7 @@ export function VisualArtworkJsonLd({ piece }: VisualArtworkJsonLdProps) {
     name: piece.name,
     description: piece.description,
     image: mainImage.startsWith("http") ? mainImage : `${BASE_URL}${mainImage}`,
-    dateCreated: piece.year.toString(),
+    dateCreated: (piece.year || 2025).toString(),
     artMedium: piece.technique,
     artworkSurface: "Ceramic",
     width: piece.dimensions,

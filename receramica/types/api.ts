@@ -1,4 +1,4 @@
-import type { Piece, PieceSummary } from "./piece";
+import type { Piece, PieceSummary, Creacion, CarouselImageRaw } from "./piece";
 
 /**
  * Respuesta genérica de la API
@@ -24,19 +24,29 @@ export interface PaginatedResponse<T> {
 }
 
 /**
- * Respuesta de listado de piezas
+ * Respuesta de /api/creaciones - array directo
+ */
+export type CreacionesResponse = Creacion[];
+
+/**
+ * Respuesta de /api/creaciones/{id} - objeto directo
+ */
+export type CreacionDetailResponse = Creacion;
+
+/**
+ * Respuesta de /api/images - array de imágenes para carrusel
+ */
+export type CarouselImagesResponse = CarouselImageRaw[];
+
+/**
+ * Respuesta de listado de piezas (transformada)
  */
 export type PiecesListResponse = ApiResponse<PieceSummary[]>;
 
 /**
- * Respuesta de detalle de pieza
+ * Respuesta de detalle de pieza (transformada)
  */
 export type PieceDetailResponse = ApiResponse<Piece>;
-
-/**
- * Respuesta de piezas destacadas
- */
-export type FeaturedPiecesResponse = ApiResponse<PieceSummary[]>;
 
 /**
  * Error de la API

@@ -1,11 +1,64 @@
 /**
- * Representa una pieza de cerámica
+ * Imagen cruda del API (estructura de /api/creaciones)
+ */
+export interface CreacionImage {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  product_id: number;
+  url: string;
+  alt: string;
+  main: 0 | 1;
+}
+
+/**
+ * Creación cruda del API (estructura de /api/creaciones)
+ */
+export interface Creacion {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  name: string;
+  description: string;
+  price: string;
+  quantity: number;
+  landing: 0 | 1;
+  images: CreacionImage[];
+}
+
+/**
+ * Imagen del carrusel cruda del API (estructura de /api/images)
+ */
+export interface CarouselImageRaw {
+  id: number;
+  created_at: string;
+  updated_at: string;
+  product_id: number;
+  url: string;
+  alt: string;
+  main: 1;
+}
+
+/**
+ * Imagen de una pieza transformada para UI
+ */
+export interface PieceImage {
+  id: number;
+  piece_id: number;
+  url: string;
+  alt?: string;
+  order: number;
+  is_main: boolean;
+}
+
+/**
+ * Representa una pieza de cerámica transformada para UI
  */
 export interface Piece {
   id: number;
   name: string;
   slug: string;
-  year: number;
+  year?: number;
   technique: string;
   dimensions: string;
   description: string;
@@ -19,25 +72,13 @@ export interface Piece {
 }
 
 /**
- * Imagen de una pieza
- */
-export interface PieceImage {
-  id: number;
-  piece_id: number;
-  url: string;
-  alt?: string;
-  order: number;
-  is_main: boolean;
-}
-
-/**
  * Pieza con datos mínimos para listados
  */
 export interface PieceSummary {
   id: number;
   name: string;
   slug: string;
-  year: number;
+  year?: number;
   technique: string;
   main_image: string;
   featured: boolean;
@@ -49,7 +90,7 @@ export interface PieceSummary {
 export interface CarouselPiece {
   id: number;
   name: string;
-  year: number;
+  year?: number;
   technique: string;
   image: string;
   slug: string;

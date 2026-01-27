@@ -1,44 +1,32 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { MaximizeIcon } from "@/components/ui/IconButton";
 import { CarouselSkeleton } from "@/components/ui/Skeleton";
 import { Carousel3D, CarouselPiece } from "@/components/gallery";
 import { useUI } from "@/context/UIContext";
-
-// Demo pieces - will be replaced by API data
-const DEMO_PIECES: CarouselPiece[] = [
-  { id: 1, name: "Vasija del Fénix", year: 2024, technique: "Cerámica esmaltada", image: "/Images/barro.jpg" },
-  { id: 2, name: "Espiral Terracota", year: 2024, technique: "Gres terracota", image: "/Images/tecnica.jpg" },
-  { id: 3, name: "Manganorhythmus", year: 2024, technique: "Cerámica con óxidos", image: "/Images/taller.jpg" },
-  { id: 4, name: "Aurora Cerámica", year: 2023, technique: "Porcelana", image: "/Images/barro.jpg" },
-  { id: 5, name: "Ondas del Tiempo", year: 2023, technique: "Gres esmaltado", image: "/Images/tecnica.jpg" },
-];
+import { useCarouselImages, useCriticalImagePrefetch, useImagePrefetch } from "@/hooks";
 
 export function GallerySection() {
   const t = useTranslations("gallery");
   const { openExposition, openPieceModal } = useUI();
-  const [pieces, setPieces] = useState<CarouselPiece[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { images, imageUrls, isLoading, error } = useCarouselImages();
 
-  // Load pieces (demo for now)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setPieces(DEMO_PIECES);
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
+  // Prefetch de imágenes críticas (primeras 5)
+  useCriticalImagePrefetch(imageUrls, 5);
+
+  // Prefetch del resto de imágenes con control de concurrencia
+  useImagePrefetch(imageUrls);
 
   const handlePieceClick = (piece: CarouselPiece) => {
     openPieceModal({
       id: piece.id,
       name: piece.name,
-      slug: `piece-${piece.id}`,
-      year: piece.year,
+      slug: piece.slug || `piece-${piece.id}`,
+      year: piece.year || 2025,
       technique: piece.technique,
       dimensions: "",
       description: "",
@@ -72,13 +60,21 @@ export function GallerySection() {
           <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12">
             <CarouselSkeleton />
           </div>
-        ) : (
+        ) : error ? (
+          <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12 flex items-center justify-center">
+            <p className="text-text-secondary">{t("errorLoading")}</p>
+          </div>
+        ) : images.length > 0 ? (
           <Carousel3D
-            pieces={pieces}
+            pieces={images}
             onPieceClick={handlePieceClick}
             autoplay={true}
             autoplayInterval={5000}
           />
+        ) : (
+          <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12 flex items-center justify-center">
+            <p className="text-text-secondary">{t("noImages")}</p>
+          </div>
         )}
 
         {/* Experience Button */}

@@ -6,146 +6,8 @@ import { cn } from "@/lib/utils";
 import { CloseIcon } from "@/components/ui/IconButton";
 import { ExpositionGrid } from "./ExpositionGrid";
 import { useUI } from "@/context/UIContext";
-import type { Piece } from "@/types";
-
-// Demo pieces for exposition
-const DEMO_PIECES: Piece[] = [
-  {
-    id: 1,
-    name: "Vasija del Fénix",
-    slug: "vasija-fenix",
-    year: 2024,
-    technique: "Cerámica esmaltada",
-    dimensions: "45 x 30 cm",
-    description: "Pieza única inspirada en el renacimiento",
-    images: [{ id: 1, piece_id: 1, url: "/Images/barro.jpg", alt: "Vasija del Fénix", order: 0, is_main: true }],
-    featured: true,
-    available: true,
-    order: 0,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 2,
-    name: "Espiral Terracota",
-    slug: "espiral-terracota",
-    year: 2024,
-    technique: "Gres terracota",
-    dimensions: "35 x 25 cm",
-    description: "Exploración del movimiento en arcilla",
-    images: [{ id: 2, piece_id: 2, url: "/Images/tecnica.jpg", alt: "Espiral Terracota", order: 0, is_main: true }],
-    featured: true,
-    available: true,
-    order: 1,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 3,
-    name: "Manganorhythmus",
-    slug: "manganorhythmus",
-    year: 2024,
-    technique: "Cerámica con óxidos",
-    dimensions: "50 x 40 cm",
-    description: "Ritmos visuales en manganeso",
-    images: [{ id: 3, piece_id: 3, url: "/Images/taller.jpg", alt: "Manganorhythmus", order: 0, is_main: true }],
-    featured: false,
-    available: true,
-    order: 2,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 4,
-    name: "Aurora Cerámica",
-    slug: "aurora-ceramica",
-    year: 2023,
-    technique: "Porcelana",
-    dimensions: "30 x 20 cm",
-    description: "Luz capturada en porcelana",
-    images: [{ id: 4, piece_id: 4, url: "/Images/barro.jpg", alt: "Aurora Cerámica", order: 0, is_main: true }],
-    featured: true,
-    available: true,
-    order: 3,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 5,
-    name: "Ondas del Tiempo",
-    slug: "ondas-tiempo",
-    year: 2023,
-    technique: "Gres esmaltado",
-    dimensions: "40 x 35 cm",
-    description: "La fluidez del tiempo",
-    images: [{ id: 5, piece_id: 5, url: "/Images/tecnica.jpg", alt: "Ondas del Tiempo", order: 0, is_main: true }],
-    featured: false,
-    available: true,
-    order: 4,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 6,
-    name: "Tierra Viva",
-    slug: "tierra-viva",
-    year: 2023,
-    technique: "Cerámica rústica",
-    dimensions: "55 x 45 cm",
-    description: "Conexión con la tierra",
-    images: [{ id: 6, piece_id: 6, url: "/Images/taller.jpg", alt: "Tierra Viva", order: 0, is_main: true }],
-    featured: false,
-    available: true,
-    order: 5,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 7,
-    name: "Eco del Fuego",
-    slug: "eco-fuego",
-    year: 2024,
-    technique: "Rakú",
-    dimensions: "38 x 28 cm",
-    description: "Memorias del horno",
-    images: [{ id: 7, piece_id: 7, url: "/Images/barro.jpg", alt: "Eco del Fuego", order: 0, is_main: true }],
-    featured: true,
-    available: true,
-    order: 6,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 8,
-    name: "Susurros de Arcilla",
-    slug: "susurros-arcilla",
-    year: 2023,
-    technique: "Cerámica fina",
-    dimensions: "25 x 20 cm",
-    description: "La voz silenciosa del barro",
-    images: [{ id: 8, piece_id: 8, url: "/Images/tecnica.jpg", alt: "Susurros de Arcilla", order: 0, is_main: true }],
-    featured: false,
-    available: true,
-    order: 7,
-    created_at: "",
-    updated_at: "",
-  },
-  {
-    id: 9,
-    name: "Horizonte Dorado",
-    slug: "horizonte-dorado",
-    year: 2024,
-    technique: "Cerámica con lustre",
-    dimensions: "42 x 32 cm",
-    description: "Reflejos del atardecer",
-    images: [{ id: 9, piece_id: 9, url: "/Images/taller.jpg", alt: "Horizonte Dorado", order: 0, is_main: true }],
-    featured: true,
-    available: true,
-    order: 8,
-    created_at: "",
-    updated_at: "",
-  },
-];
+import { usePieces } from "@/hooks";
+import type { Piece, PieceSummary } from "@/types";
 
 export function ExpositionFullscreen() {
   const t = useTranslations("exposition");
@@ -158,15 +20,32 @@ export function ExpositionFullscreen() {
 
   const [isAnimating, setIsAnimating] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false);
-  const [pieces, setPieces] = useState<Piece[]>([]);
+  const { pieces: pieceSummaries, isLoading } = usePieces();
 
-  // Load pieces when exposition opens
-  useEffect(() => {
-    if (isExpositionOpen) {
-      // In production, fetch from API
-      setPieces(DEMO_PIECES);
-    }
-  }, [isExpositionOpen]);
+  // Transformar PieceSummary a Piece para ExpositionGrid
+  const pieces: Piece[] = pieceSummaries.map((summary: PieceSummary) => ({
+    id: summary.id,
+    name: summary.name,
+    slug: summary.slug,
+    year: summary.year || 2025,
+    technique: summary.technique,
+    dimensions: "",
+    description: "",
+    description_extended: "",
+    images: [{
+      id: 1,
+      piece_id: summary.id,
+      url: summary.main_image,
+      alt: summary.name,
+      order: 0,
+      is_main: true,
+    }],
+    featured: summary.featured,
+    available: true,
+    order: 0,
+    created_at: "",
+    updated_at: "",
+  }));
 
   // Handle animation states
   useEffect(() => {
@@ -291,11 +170,19 @@ export function ExpositionFullscreen() {
 
       {/* Grid of pieces */}
       <div className="relative z-10 flex-1 overflow-hidden">
-        <ExpositionGrid
-          pieces={pieces}
-          onPieceClick={handlePieceClick}
-          isVisible={isContentVisible}
-        />
+        {isLoading ? (
+          <div className="flex items-center justify-center h-full">
+            <div className="animate-pulse text-text-secondary">
+              {t("loading")}
+            </div>
+          </div>
+        ) : (
+          <ExpositionGrid
+            pieces={pieces}
+            onPieceClick={handlePieceClick}
+            isVisible={isContentVisible}
+          />
+        )}
       </div>
 
       {/* Bottom gradient fade */}
