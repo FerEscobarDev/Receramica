@@ -16,9 +16,9 @@ interface ExpositionTileProps {
 }
 
 const HEIGHT_CLASSES: Record<TileHeight, string> = {
-  small: "h-48 md:h-56",
-  medium: "h-64 md:h-72",
-  large: "h-80 md:h-96",
+  small: "h-[200px]",
+  medium: "h-[260px]",
+  large: "h-[340px]",
 };
 
 export function ExpositionTile({
@@ -34,10 +34,11 @@ export function ExpositionTile({
     <button
       onClick={onClick}
       className={cn(
-        "relative w-full overflow-hidden rounded-lg",
+        "relative w-full overflow-hidden rounded",
         "group cursor-pointer",
         "focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta",
         HEIGHT_CLASSES[height],
+        "shadow-[0_4px_16px_rgba(0,0,0,0.25)]",
         "transition-all duration-700 ease-out",
         isVisible
           ? "opacity-100 translate-y-0"
@@ -81,7 +82,7 @@ export function ExpositionTile({
 
       {/* Subtle border glow on hover */}
       <div className={cn(
-        "absolute inset-0 rounded-lg",
+        "absolute inset-0 rounded",
         "ring-2 ring-terracotta/0 group-hover:ring-terracotta/50",
         "transition-all duration-300"
       )} />

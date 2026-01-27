@@ -95,7 +95,8 @@
     "subtitle": "Descubre la colección completa de piezas cerámicas únicas. Cada obra cuenta una historia de pasión, técnica y expresión artística.",
     "close": "Cerrar",
     "enterSite": "Entrar al sitio",
-    "scroll": "Desliza para explorar"
+    "scroll": "Desliza para explorar",
+    "loading": "Cargando..."
   },
   "modal": {
     "uniquePiece": "PIEZA ÚNICA",

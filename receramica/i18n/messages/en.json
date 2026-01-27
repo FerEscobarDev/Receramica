@@ -95,7 +95,8 @@
     "subtitle": "Discover the complete collection of unique ceramic pieces. Each work tells a story of passion, technique, and artistic expression.",
     "close": "Close",
     "enterSite": "Enter the site",
-    "scroll": "Scroll to explore"
+    "scroll": "Scroll to explore",
+    "loading": "Loading..."
   },
   "modal": {
     "uniquePiece": "UNIQUE PIECE",

@@ -110,63 +110,48 @@ export function ExpositionFullscreen() {
         }}
       />
 
-      {/* Header with title and close button */}
-      <header
+      {/* Title Overlay - Absolute positioned */}
+      <div
         className={cn(
-          "relative z-10",
-          "flex items-center justify-between",
-          "px-6 md:px-12 py-6",
+          "absolute top-7 left-7 z-30",
+          "flex flex-col",
+          "px-4 py-3 rounded-lg",
+          "bg-black/30 backdrop-blur-sm",
           "transition-all duration-700",
           isContentVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-8"
         )}
       >
-        {/* Title */}
-        <div className="flex flex-col">
-          <span className="text-terracotta text-sm font-body tracking-widest uppercase mb-1">
-            {t("label")}
-          </span>
-          <h1 className="text-cream font-display text-3xl md:text-4xl lg:text-5xl font-light">
-            {t("title")}
-          </h1>
-        </div>
+        <span className="text-terracotta text-[10px] font-body tracking-[3px] uppercase">
+          {t("label")}
+        </span>
+        <h1 className="text-cream font-display text-[28px] font-light leading-tight">
+          {t("title")}
+        </h1>
+      </div>
 
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className={cn(
-            "flex items-center gap-3",
-            "px-6 py-3 rounded-full",
-            "border border-text-muted/30",
-            "text-cream/80 hover:text-cream",
-            "hover:border-terracotta/50 hover:bg-terracotta/10",
-            "transition-all duration-300",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
-          )}
-          aria-label={t("close")}
-        >
-          <span className="text-sm font-body hidden sm:inline">
-            {t("enterSite")}
-          </span>
-          <CloseIcon />
-        </button>
-      </header>
-
-      {/* Subtitle */}
-      <div
+      {/* Close Button - Circular, absolute positioned */}
+      <button
+        onClick={handleClose}
         className={cn(
-          "relative z-10 px-6 md:px-12 pb-6",
-          "transition-all duration-700 delay-100",
+          "absolute top-7 right-7 z-30",
+          "flex items-center justify-center",
+          "w-7 h-7 rounded-full",
+          "bg-black/50 backdrop-blur-sm border border-terracotta",
+          "text-cream hover:text-cream",
+          "hover:bg-terracotta/20",
+          "transition-all duration-300",
+          "focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta",
+          "shadow-[0_4px_12px_rgba(0,0,0,0.25)]",
           isContentVisible
             ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4"
+            : "opacity-0 -translate-y-8"
         )}
+        aria-label={t("close")}
       >
-        <p className="text-text-secondary font-body text-lg max-w-2xl">
-          {t("subtitle")}
-        </p>
-      </div>
+        <CloseIcon />
+      </button>
 
       {/* Grid of pieces */}
       <div className="relative z-10 flex-1 overflow-hidden">
@@ -198,11 +183,15 @@ export function ExpositionFullscreen() {
         className={cn(
           "absolute bottom-8 left-1/2 -translate-x-1/2 z-30",
           "flex flex-col items-center gap-2",
+          "px-6 py-3",
           "transition-all duration-700 delay-500",
           isContentVisible ? "opacity-100" : "opacity-0"
         )}
+        style={{
+          background: "radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, transparent 70%)",
+        }}
       >
-        <span className="text-text-muted text-xs font-body tracking-wider uppercase">
+        <span className="text-cream/80 text-xs font-body tracking-wider uppercase">
           {t("scroll")}
         </span>
         <div className="w-px h-8 bg-gradient-to-b from-terracotta to-transparent animate-pulse-subtle" />
