@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import { ExpositionTile, TileHeight } from "./ExpositionTile";
+import { ExpositionTile, TileHeight, HoveredTileInfo } from "./ExpositionTile";
 import type { Piece } from "@/types";
 
 interface ExpositionGridProps {
@@ -26,6 +26,18 @@ export function ExpositionGrid({
   onPieceClick,
   isVisible,
 }: ExpositionGridProps) {
+  // State for tracking hovered tile (for ripple effect)
+  const [hoveredTile, setHoveredTile] = useState<HoveredTileInfo | null>(null);
+
+  // Handlers for hover events
+  const handleTileHover = useCallback((info: HoveredTileInfo) => {
+    setHoveredTile(info);
+  }, []);
+
+  const handleTileHoverEnd = useCallback(() => {
+    setHoveredTile(null);
+  }, []);
+
   // Prepare tiles with heights
   const tilesWithHeight = useMemo(() => {
     return pieces.map((piece, index) => ({
@@ -51,13 +63,14 @@ export function ExpositionGrid({
         "p-3",
         "scrollbar-thin scrollbar-track-bg-earth scrollbar-thumb-text-muted"
       )}
+      style={{ perspective: "1500px" }}
     >
       {/* Masonry Grid Container - 5 columns */}
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1600px] mx-auto" style={{ perspectiveOrigin: "center center" }}>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {/* Column 1 */}
           <div className="flex flex-col gap-3">
-            {columns[0].map((tile, index) => (
+            {columns[0].map((tile, rowIndex) => (
               <ExpositionTile
                 key={tile.id}
                 id={tile.id}
@@ -65,15 +78,19 @@ export function ExpositionGrid({
                 image={tile.mainImage}
                 height={tile.height}
                 onClick={() => onPieceClick(tile)}
-                index={index * 5}
+                index={rowIndex * 5}
                 isVisible={isVisible}
+                position={{ column: 0, row: rowIndex }}
+                hoveredTile={hoveredTile}
+                onTileHover={handleTileHover}
+                onTileHoverEnd={handleTileHoverEnd}
               />
             ))}
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-3 lg:mt-8">
-            {columns[1].map((tile, index) => (
+            {columns[1].map((tile, rowIndex) => (
               <ExpositionTile
                 key={tile.id}
                 id={tile.id}
@@ -81,15 +98,19 @@ export function ExpositionGrid({
                 image={tile.mainImage}
                 height={tile.height}
                 onClick={() => onPieceClick(tile)}
-                index={index * 5 + 1}
+                index={rowIndex * 5 + 1}
                 isVisible={isVisible}
+                position={{ column: 1, row: rowIndex }}
+                hoveredTile={hoveredTile}
+                onTileHover={handleTileHover}
+                onTileHoverEnd={handleTileHoverEnd}
               />
             ))}
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-3 hidden sm:flex">
-            {columns[2].map((tile, index) => (
+            {columns[2].map((tile, rowIndex) => (
               <ExpositionTile
                 key={tile.id}
                 id={tile.id}
@@ -97,15 +118,19 @@ export function ExpositionGrid({
                 image={tile.mainImage}
                 height={tile.height}
                 onClick={() => onPieceClick(tile)}
-                index={index * 5 + 2}
+                index={rowIndex * 5 + 2}
                 isVisible={isVisible}
+                position={{ column: 2, row: rowIndex }}
+                hoveredTile={hoveredTile}
+                onTileHover={handleTileHover}
+                onTileHoverEnd={handleTileHoverEnd}
               />
             ))}
           </div>
 
           {/* Column 4 */}
           <div className="flex flex-col gap-3 hidden lg:flex lg:mt-4">
-            {columns[3].map((tile, index) => (
+            {columns[3].map((tile, rowIndex) => (
               <ExpositionTile
                 key={tile.id}
                 id={tile.id}
@@ -113,15 +138,19 @@ export function ExpositionGrid({
                 image={tile.mainImage}
                 height={tile.height}
                 onClick={() => onPieceClick(tile)}
-                index={index * 5 + 3}
+                index={rowIndex * 5 + 3}
                 isVisible={isVisible}
+                position={{ column: 3, row: rowIndex }}
+                hoveredTile={hoveredTile}
+                onTileHover={handleTileHover}
+                onTileHoverEnd={handleTileHoverEnd}
               />
             ))}
           </div>
 
           {/* Column 5 */}
           <div className="flex flex-col gap-3 hidden lg:flex lg:mt-10">
-            {columns[4].map((tile, index) => (
+            {columns[4].map((tile, rowIndex) => (
               <ExpositionTile
                 key={tile.id}
                 id={tile.id}
@@ -129,8 +158,12 @@ export function ExpositionGrid({
                 image={tile.mainImage}
                 height={tile.height}
                 onClick={() => onPieceClick(tile)}
-                index={index * 5 + 4}
+                index={rowIndex * 5 + 4}
                 isVisible={isVisible}
+                position={{ column: 4, row: rowIndex }}
+                hoveredTile={hoveredTile}
+                onTileHover={handleTileHover}
+                onTileHoverEnd={handleTileHoverEnd}
               />
             ))}
           </div>
