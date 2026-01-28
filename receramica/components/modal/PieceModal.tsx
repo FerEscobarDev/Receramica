@@ -3,176 +3,243 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { CloseIcon } from "@/components/ui/IconButton";
 import { ImageGallery } from "./ImageGallery";
 import { PieceInfo } from "./PieceInfo";
 import { useUI } from "@/context/UIContext";
 import { usePieceDetail } from "@/hooks";
 
+function CloseIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  );
+}
+
 export function PieceModal() {
   const t = useTranslations("modal");
   const { isModalOpen, selectedPiece, closePieceModal } = useUI();
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [isContentVisible, setIsContentVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
 
-  // Cargar datos completos de la pieza cuando se abre el modal
-  const { piece: fullPieceData, isLoading: isLoadingDetail } = usePieceDetail(
+  const { piece: fullPieceData, isLoading } = usePieceDetail(
     isModalOpen && selectedPiece ? selectedPiece.id : null
   );
 
-  // Usar datos completos si están disponibles, sino usar los datos parciales
-  const pieceToShow = fullPieceData || selectedPiece;
+  const piece = fullPieceData || selectedPiece;
 
-  // Handle animation states
+  // Animation
   useEffect(() => {
     if (isModalOpen) {
-      setIsAnimating(true);
-      // Delay content animation for entrance effect
-      const timer = setTimeout(() => {
-        setIsContentVisible(true);
-      }, 100);
-      return () => clearTimeout(timer);
+      requestAnimationFrame(() => setIsVisible(true));
     } else {
-      setIsContentVisible(false);
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 400);
-      return () => clearTimeout(timer);
+      setIsVisible(false);
     }
   }, [isModalOpen]);
 
-  // Handle click outside to close
+  // Close on backdrop click
   const handleBackdropClick = useCallback((e: React.MouseEvent) => {
-    if (e.target === modalRef.current) {
+    if (e.target === e.currentTarget) {
       closePieceModal();
     }
   }, [closePieceModal]);
 
-  // Focus trap and keyboard handling
+  // Keyboard: Escape to close
   useEffect(() => {
     if (!isModalOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        closePieceModal();
-      }
-
-      // Tab trap
-      if (e.key === "Tab") {
-        const focusableElements = contentRef.current?.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-
-        if (!focusableElements?.length) return;
-
-        const firstElement = focusableElements[0] as HTMLElement;
-        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
-
-        if (e.shiftKey && document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement.focus();
-        } else if (!e.shiftKey && document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement.focus();
-        }
-      }
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closePieceModal();
     };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    // Focus the close button when modal opens
-    const closeButton = contentRef.current?.querySelector('[data-close-button]') as HTMLElement;
-    closeButton?.focus();
-
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, [isModalOpen, closePieceModal]);
 
-  if (!isAnimating && !isModalOpen) {
-    return null;
-  }
-
-  if (!pieceToShow) {
-    return null;
-  }
+  if (!isModalOpen || !piece) return null;
 
   return (
-    <div
-      ref={modalRef}
-      onClick={handleBackdropClick}
-      className={cn(
-        "fixed inset-0 z-[60]",
-        "flex items-center justify-center",
-        "p-4 md:p-8",
-        "transition-opacity duration-300",
-        isModalOpen ? "opacity-100" : "opacity-0"
-      )}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-    >
-      {/* Backdrop */}
+    <>
+      {/* 
+        MOBILE MODAL - Completely separate from tablet/desktop
+        Uses a simple structure: fixed full-screen container with two sections
+      */}
       <div
-        className={cn(
-          "absolute inset-0 bg-black/80 backdrop-blur-sm",
-          "transition-opacity duration-300",
-          isModalOpen ? "opacity-100" : "opacity-0"
-        )}
-        aria-hidden="true"
-      />
-
-      {/* Modal Content */}
-      <div
-        ref={contentRef}
-        className={cn(
-          "relative z-10",
-          "w-full max-w-5xl max-h-[90vh]",
-          "bg-bg-warm rounded-2xl overflow-hidden",
-          "shadow-2xl",
-          "transition-all duration-400 ease-out",
-          isContentVisible
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-8 scale-95"
-        )}
+        className="md:hidden fixed inset-0 z-[60]"
+        style={{
+          // Force the container to NEVER exceed viewport
+          width: '100vw',
+          height: '100vh',
+          maxWidth: '100vw',
+          maxHeight: '100vh',
+          overflow: 'hidden'
+        }}
       >
-        {/* Close button */}
-        <button
-          data-close-button
-          onClick={closePieceModal}
+        {/* Backdrop */}
+        <div
           className={cn(
-            "absolute top-4 right-4 z-20",
-            "w-10 h-10 rounded-full",
-            "bg-bg-earth/80 backdrop-blur-sm",
-            "flex items-center justify-center",
-            "text-cream/80 hover:text-cream",
-            "hover:bg-bg-earth",
-            "transition-all duration-200",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta"
+            "absolute inset-0 bg-[#1A1512]/95 transition-opacity duration-300",
+            isVisible ? "opacity-100" : "opacity-0"
           )}
+          onClick={closePieceModal}
+        />
+
+        {/* Close Button */}
+        <button
+          onClick={closePieceModal}
+          className="absolute top-3 right-3 z-50 w-11 h-11 rounded-full bg-[#1A1512]/90 border-2 border-terracotta flex items-center justify-center text-cream"
           aria-label={t("close")}
         >
           <CloseIcon />
         </button>
 
-        {/* Modal body - 2 columns on desktop */}
-        <div className="flex flex-col md:flex-row h-full max-h-[90vh] min-h-[500px]">
-          {/* Left column - Image gallery */}
-          <div className="md:w-1/2 p-6 md:p-8 bg-bg-clay/50">
-            <div className="h-[300px] md:h-full min-h-[300px]">
-              <ImageGallery
-                images={pieceToShow.images}
-                pieceName={pieceToShow.name}
-              />
-            </div>
+        {/* Content Container - Uses absolute with explicit dimensions */}
+        <div
+          className={cn(
+            "absolute inset-0 flex flex-col transition-all duration-300",
+            isVisible ? "opacity-100" : "opacity-0 translate-y-4"
+          )}
+          style={{ overflow: 'hidden' }}
+        >
+          {/* IMAGE SECTION: Fixed 55% height */}
+          <div
+            className="relative flex-shrink-0 bg-bg-earth"
+            style={{ height: '55%' }}
+          >
+            <ImageGallery images={piece.images} pieceName={piece.name} variant="mobile" />
           </div>
 
-          {/* Right column - Piece info */}
-          <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[400px] md:max-h-none min-h-[200px]">
-            <PieceInfo piece={pieceToShow} isLoading={isLoadingDetail} />
+          {/* CONTENT SECTION: Remaining 45% with scroll */}
+          <div
+            className="relative flex-1 bg-bg-clay rounded-t-[20px] -mt-5 z-10 flex flex-col"
+            style={{
+              minHeight: 0,  // Critical for flex overflow
+              overflow: 'hidden'
+            }}
+          >
+            {/* Scroll handle */}
+            <div className="flex justify-center pt-3 pb-2 flex-shrink-0">
+              <div className="w-9 h-1 rounded-full bg-terracotta" />
+            </div>
+
+            {/* Scrollable Area */}
+            <div
+              className="flex-1 px-4 pb-4"
+              style={{
+                minHeight: 0,
+                overflowY: 'auto',
+                overflowX: 'hidden'
+              }}
+            >
+              <PieceInfo piece={piece} isLoading={isLoading} variant="mobile" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* 
+        TABLET MODAL (md to lg)
+      */}
+      <div
+        ref={modalRef}
+        onClick={handleBackdropClick}
+        className={cn(
+          "hidden md:flex lg:hidden fixed inset-0 z-[60] items-center justify-center",
+          "transition-opacity duration-300",
+          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+        style={{ overflow: 'hidden' }}
+      >
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-[#1A1512]/95" />
+
+        {/* Modal Card */}
+        <div
+          className={cn(
+            "relative z-10 bg-bg-clay rounded-2xl border border-[#4A4035]/25 shadow-2xl",
+            "flex flex-col",
+            "transition-all duration-300",
+            isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+          )}
+          style={{
+            width: 'calc(100vw - 32px)',
+            maxWidth: '768px',
+            height: '90vh',
+            maxHeight: '900px',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closePieceModal}
+            className="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-[#1A1512]/90 border-2 border-terracotta flex items-center justify-center text-cream hover:text-white transition-colors"
+            aria-label={t("close")}
+          >
+            <CloseIcon />
+          </button>
+
+          {/* Image Section */}
+          <div className="flex-shrink-0 p-6 pb-0" style={{ height: '50%' }}>
+            <ImageGallery images={piece.images} pieceName={piece.name} variant="tablet" />
+          </div>
+
+          {/* Content Section */}
+          <div className="flex-1 p-6 pt-4" style={{ minHeight: 0, overflow: 'hidden' }}>
+            <PieceInfo piece={piece} isLoading={isLoading} variant="tablet" />
+          </div>
+        </div>
+      </div>
+
+      {/* 
+        DESKTOP MODAL (lg and up)
+      */}
+      <div
+        onClick={handleBackdropClick}
+        className={cn(
+          "hidden lg:flex fixed inset-0 z-[60] items-center justify-center",
+          "transition-opacity duration-300",
+          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+        style={{ overflow: 'hidden' }}
+      >
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-[#1A1512]/95" />
+
+        {/* Modal Card */}
+        <div
+          className={cn(
+            "relative z-10 bg-bg-clay rounded-2xl border border-[#4A4035]/25 shadow-2xl",
+            "flex flex-row p-10 gap-10",
+            "transition-all duration-300",
+            isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+          )}
+          style={{
+            width: '1280px',
+            maxWidth: 'calc(100vw - 64px)',
+            height: '780px',
+            maxHeight: 'calc(100vh - 80px)',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closePieceModal}
+            className="absolute top-4 right-4 z-30 w-14 h-14 rounded-full bg-[#1A1512]/90 border-2 border-terracotta flex items-center justify-center text-cream hover:text-white transition-colors"
+            aria-label={t("close")}
+          >
+            <CloseIcon />
+          </button>
+
+          {/* Left: Image Gallery */}
+          <div className="w-[420px] flex-shrink-0 h-full">
+            <ImageGallery images={piece.images} pieceName={piece.name} variant="desktop" />
+          </div>
+
+          {/* Right: Piece Info */}
+          <div className="flex-1 h-full" style={{ minWidth: 0, overflow: 'hidden' }}>
+            <PieceInfo piece={piece} isLoading={isLoading} variant="desktop" />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

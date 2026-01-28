@@ -27,36 +27,36 @@ const POSITION_STYLES: Record<Exclude<SlidePosition, "hidden">, {
     transform: "translateX(-180%) scale(0.5)",
     opacity: 0.4,
     zIndex: 10,
-    width: "160px",
-    height: "220px",
+    width: "200px",
+    height: "280px",
   },
   "left": {
     transform: "translateX(-100%) scale(0.7)",
     opacity: 0.7,
     zIndex: 20,
-    width: "220px",
-    height: "290px",
+    width: "280px",
+    height: "380px",
   },
   "center": {
     transform: "translateX(0) scale(1)",
     opacity: 1,
     zIndex: 30,
-    width: "320px",
-    height: "380px",
+    width: "400px",
+    height: "500px",
   },
   "right": {
     transform: "translateX(100%) scale(0.7)",
     opacity: 0.7,
     zIndex: 20,
-    width: "220px",
-    height: "290px",
+    width: "280px",
+    height: "380px",
   },
   "far-right": {
     transform: "translateX(180%) scale(0.5)",
     opacity: 0.4,
     zIndex: 10,
-    width: "160px",
-    height: "220px",
+    width: "200px",
+    height: "280px",
   },
 };
 
@@ -117,7 +117,7 @@ export function CarouselSlide({
         alt={name}
         fill
         className="object-cover"
-        sizes="(max-width: 768px) 280px, 320px"
+        sizes="(max-width: 768px) 320px, 400px"
         priority={isCenter}
       />
 

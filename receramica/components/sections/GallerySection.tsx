@@ -52,7 +52,7 @@ export function GallerySection() {
           title={t("title")}
           description={t("subtitle")}
           align="center"
-          className="mb-12 md:mb-16"
+          className="mb-6 md:mb-8"
         />
 
         {/* Carousel Container */}
@@ -82,15 +82,17 @@ export function GallerySection() {
           <button
             onClick={openExposition}
             className={cn(
-              "inline-flex items-center gap-3",
-              "px-8 py-4 rounded-full",
+              "inline-flex items-center justify-center gap-3",
+              "px-12 py-5 rounded-full",
               "border-2 border-terracotta",
-              "text-terracotta font-body font-medium",
+              "text-terracotta font-body text-base font-medium",
               "hover:bg-terracotta/10 transition-colors duration-300",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-bg-clay"
             )}
           >
-            <MaximizeIcon />
+            <span className="w-5 h-5">
+              <MaximizeIcon />
+            </span>
             <span>{t("experienceButton")}</span>
           </button>
         </div>

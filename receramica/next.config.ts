@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
         pathname: "/storage/**",
       },
     ],
+    // Allow local paths - omit search to allow all query strings
+    localPatterns: [
+      {
+        pathname: "/api/image-proxy",
+      },
+      {
+        pathname: "/Images/**",
+      },
+    ],
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

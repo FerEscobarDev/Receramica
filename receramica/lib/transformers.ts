@@ -14,14 +14,21 @@ const DEFAULT_YEAR = 2025;
 
 /**
  * Construye la URL completa de una imagen a partir de la ruta relativa
+ * Las imágenes se sirven a través del proxy de cache para optimizar rendimiento
  */
 export function buildImageUrl(relativePath: string): string {
   if (!relativePath) return "/Images/placeholder.jpg";
-  if (relativePath.startsWith("http")) return relativePath;
+  if (relativePath.startsWith("http")) {
+    // URL externa: pasar por proxy de cache
+    return `/api/image-proxy?url=${encodeURIComponent(relativePath)}`;
+  }
 
   // Normalizar barras invertidas a barras normales
   const normalizedPath = relativePath.replace(/\\/g, "/");
-  return `${STORAGE_BASE_URL}/${normalizedPath}`;
+  const remoteUrl = `${STORAGE_BASE_URL}/${normalizedPath}`;
+
+  // Pasar por proxy de cache
+  return `/api/image-proxy?url=${encodeURIComponent(remoteUrl)}`;
 }
 
 /**

@@ -50,7 +50,8 @@
                   "fill": "$text-secondary",
                   "content": "Galería",
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -59,7 +60,8 @@
                   "fill": "$text-secondary",
                   "content": "El Artista",
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -68,7 +70,8 @@
                   "fill": "$text-secondary",
                   "content": "El Taller",
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -77,7 +80,8 @@
                   "fill": "$terracotta",
                   "content": "Contacto",
                   "fontFamily": "Inter",
-                  "fontSize": 14
+                  "fontSize": 14,
+                  "fontWeight": "normal"
                 }
               ]
             }
@@ -161,7 +165,8 @@
               "content": "Cada pieza es una expresión de felicidad, entusiasmo y sorpresa perpetuos",
               "textAlign": "center",
               "fontFamily": "Cormorant Garamond",
-              "fontSize": 24
+              "fontSize": 24,
+              "fontWeight": "normal"
             }
           ]
         },
@@ -202,7 +207,8 @@
                   "fill": "$cream",
                   "content": "Galería del Artista",
                   "fontFamily": "Cormorant Garamond",
-                  "fontSize": 48
+                  "fontSize": 48,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -639,7 +645,8 @@
                   "fill": "$cream",
                   "content": "Ricardo Escobar",
                   "fontFamily": "Cormorant Garamond",
-                  "fontSize": 56
+                  "fontSize": 56,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -651,7 +658,8 @@
                   "content": "Ricardo Escobar es un destacado artista cuya visión y creatividad se manifiestan en cada una de sus obras. Sus piezas no solo son productos de su habilidad técnica, sino también portadoras de su identidad y esencia, convirtiendo el diseño en una expresión personal y la artesanía en una firma inconfundible.",
                   "lineHeight": 1.8,
                   "fontFamily": "Inter",
-                  "fontSize": 16
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -663,7 +671,8 @@
                   "content": "Su objetivo es embellecer la vida de las personas, creando objetos que no solo adornan los espacios, sino que también generan nuevas experiencias estéticas y sensoriales.",
                   "lineHeight": 1.8,
                   "fontFamily": "Inter",
-                  "fontSize": 16
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 }
               ]
             }
@@ -711,7 +720,8 @@
                   "content": "Innovación y Maestría",
                   "textAlign": "center",
                   "fontFamily": "Cormorant Garamond",
-                  "fontSize": 48
+                  "fontSize": 48,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -900,7 +910,8 @@
                   "fill": "$cream",
                   "content": "El Taller",
                   "fontFamily": "Cormorant Garamond",
-                  "fontSize": 56
+                  "fontSize": 56,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1010,7 +1021,8 @@
                   "content": "El Corazón del Barro",
                   "textAlign": "center",
                   "fontFamily": "Cormorant Garamond",
-                  "fontSize": 48
+                  "fontSize": 48,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1260,7 +1272,8 @@
               "content": "¿Listo para descubrir tu pieza única?",
               "textAlign": "center",
               "fontFamily": "Cormorant Garamond",
-              "fontSize": 48
+              "fontSize": 48,
+              "fontWeight": "normal"
             },
             {
               "type": "text",
@@ -2102,7 +2115,8 @@
               "fill": "$cream",
               "content": "Ricardo Escobar",
               "fontFamily": "Cormorant Garamond",
-              "fontSize": 28
+              "fontSize": 28,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -2152,23 +2166,19 @@
               "type": "frame",
               "id": "tm8TJ",
               "name": "Image Gallery Column",
-              "width": 560,
+              "width": 420,
               "height": "fill_container",
               "layout": "vertical",
-              "gap": 20,
+              "gap": 12,
               "children": [
                 {
                   "type": "frame",
                   "id": "jikV7",
                   "name": "Main Image Container",
                   "width": "fill_container",
-                  "height": 440,
-                  "fill": "$bg-warm",
+                  "height": 580,
+                  "fill": "transparent",
                   "cornerRadius": 12,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "#4A403540"
-                  },
                   "layout": "none",
                   "children": [
                     {
@@ -2177,15 +2187,47 @@
                       "x": 0,
                       "y": 0,
                       "name": "Main Image",
-                      "width": 560,
-                      "height": 480,
+                      "width": 420,
+                      "height": 580,
                       "fill": {
                         "type": "image",
                         "enabled": true,
                         "url": "./images/generated-1769389363641.png",
                         "mode": "fill"
                       },
-                      "cornerRadius": 12
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#4A403540"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "USpbI",
+                      "x": 178,
+                      "y": 535,
+                      "name": "Image Counter",
+                      "width": 50,
+                      "fill": "#1A1512CC",
+                      "cornerRadius": 16,
+                      "padding": [
+                        8,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r60AU",
+                          "name": "counterText",
+                          "fill": "$cream",
+                          "content": "1 / 6",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2194,18 +2236,18 @@
                   "id": "gNl60",
                   "name": "Thumbnails Container",
                   "width": "fill_container",
-                  "height": 100,
-                  "gap": 12,
+                  "height": 80,
+                  "gap": 8,
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
                       "id": "ZnV1Y",
                       "name": "Nav Left",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "fill": "#2A241F80",
-                      "cornerRadius": 18,
+                      "cornerRadius": 16,
                       "stroke": {
                         "thickness": 1,
                         "fill": "$terracotta"
@@ -2217,8 +2259,8 @@
                           "type": "icon_font",
                           "id": "5h5bQ",
                           "name": "navLeftIcon",
-                          "width": 20,
-                          "height": 20,
+                          "width": 16,
+                          "height": 16,
                           "iconFontName": "chevron-left",
                           "iconFontFamily": "lucide",
                           "fill": "$cream"
@@ -2230,23 +2272,23 @@
                       "id": "AXfDL",
                       "name": "Thumbnails Row",
                       "width": "fill_container",
-                      "height": 80,
-                      "gap": 12,
+                      "height": 72,
+                      "gap": 8,
                       "justifyContent": "center",
                       "children": [
                         {
                           "type": "frame",
                           "id": "unEvT",
                           "name": "Thumb 1",
-                          "width": 80,
-                          "height": 80,
+                          "width": 40,
+                          "height": 72,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "./images/generated-1769389374459.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8,
+                          "cornerRadius": 6,
                           "stroke": {
                             "thickness": 2,
                             "fill": "$terracotta"
@@ -2256,15 +2298,15 @@
                           "type": "frame",
                           "id": "pFRf9",
                           "name": "Thumb 2",
-                          "width": 80,
-                          "height": 80,
+                          "width": 40,
+                          "height": 72,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "./images/generated-1769389380690.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8,
+                          "cornerRadius": 6,
                           "stroke": {
                             "thickness": 1,
                             "fill": "#4A403540"
@@ -2274,15 +2316,15 @@
                           "type": "frame",
                           "id": "yR7Xq",
                           "name": "Thumb 3",
-                          "width": 80,
-                          "height": 80,
+                          "width": 40,
+                          "height": 72,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "./images/generated-1769389391085.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8,
+                          "cornerRadius": 6,
                           "stroke": {
                             "thickness": 1,
                             "fill": "#4A403540"
@@ -2292,15 +2334,15 @@
                           "type": "frame",
                           "id": "4IPeT",
                           "name": "Thumb 4",
-                          "width": 80,
-                          "height": 80,
+                          "width": 40,
+                          "height": 72,
                           "fill": {
                             "type": "image",
                             "enabled": true,
                             "url": "./images/generated-1769389397365.png",
                             "mode": "fill"
                           },
-                          "cornerRadius": 8,
+                          "cornerRadius": 6,
                           "stroke": {
                             "thickness": 1,
                             "fill": "#4A403540"
@@ -2312,10 +2354,10 @@
                       "type": "frame",
                       "id": "ghzKC",
                       "name": "Nav Right",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "fill": "#2A241F80",
-                      "cornerRadius": 18,
+                      "cornerRadius": 16,
                       "stroke": {
                         "thickness": 1,
                         "fill": "$terracotta"
@@ -2327,32 +2369,13 @@
                           "type": "icon_font",
                           "id": "xcEa8",
                           "name": "navRightIcon",
-                          "width": 20,
-                          "height": 20,
+                          "width": 16,
+                          "height": 16,
                           "iconFontName": "chevron-right",
                           "iconFontFamily": "lucide",
                           "fill": "$cream"
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "USpbI",
-                  "name": "Image Counter",
-                  "width": "fill_container",
-                  "justifyContent": "center",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "r60AU",
-                      "name": "counterText",
-                      "fill": "$text-secondary",
-                      "content": "1 / 6",
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -2365,7 +2388,7 @@
               "width": "fill_container",
               "height": "fill_container",
               "layout": "vertical",
-              "gap": 24,
+              "gap": 20,
               "children": [
                 {
                   "type": "frame",
@@ -2373,7 +2396,7 @@
                   "name": "Info Header",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 12,
+                  "gap": 10,
                   "children": [
                     {
                       "type": "text",
@@ -2382,7 +2405,7 @@
                       "fill": "$terracotta",
                       "content": "PIEZA ÚNICA",
                       "fontFamily": "Inter",
-                      "fontSize": 12,
+                      "fontSize": 13,
                       "fontWeight": "500",
                       "letterSpacing": 4
                     },
@@ -2393,7 +2416,7 @@
                       "fill": "$cream",
                       "content": "Manganorhythmus spiralinex",
                       "fontFamily": "Cormorant Garamond",
-                      "fontSize": 42,
+                      "fontSize": 40,
                       "fontWeight": "normal"
                     },
                     {
@@ -2411,7 +2434,7 @@
                           "fill": "$text-secondary",
                           "content": "2024",
                           "fontFamily": "Inter",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2429,7 +2452,7 @@
                           "fill": "$text-secondary",
                           "content": "Gres terracota",
                           "fontFamily": "Inter",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2447,7 +2470,7 @@
                           "fill": "$text-secondary",
                           "content": "28 × 22 × 18 cm",
                           "fontFamily": "Inter",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         }
                       ]
@@ -2470,7 +2493,7 @@
                   "width": "fill_container",
                   "height": "fill_container",
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": 12,
                   "children": [
                     {
                       "type": "text",
@@ -2479,7 +2502,7 @@
                       "fill": "$terracotta",
                       "content": "DESCRIPCIÓN",
                       "fontFamily": "Inter",
-                      "fontSize": 11,
+                      "fontSize": 12,
                       "fontWeight": "500",
                       "letterSpacing": 3
                     },
@@ -2491,7 +2514,7 @@
                       "width": "fill_container",
                       "height": "fill_container",
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": 12,
                       "children": [
                         {
                           "type": "text",
@@ -2501,7 +2524,7 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Esta pieza escultórica, construida mediante la técnica de rollitos, presenta un diseño orgánico y fluido que combina dos tonos de gres terracota: uno natural y otro intensamente saturado con óxido de manganeso. Este contraste cromático genera un efecto visual de franjas alternadas que recorren todo su cuerpo, acentuando su textura tridimensional y resaltando los patrones geométricos que semejan escamas o facetas talladas.",
-                          "lineHeight": 1.8,
+                          "lineHeight": 1.7,
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -2514,7 +2537,7 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "La estructura general tiene una forma curvilínea que se alza desde una base estrecha, expandiéndose en una figura que podría asemejarse a una gota o una flama estilizada. En el centro de la pieza, un orificio circular, que recuerda a un ombligo, constituye un punto focal. Este &quot;ombligo&quot; está cuidadosamente esmaltado en un azul oscuro y profundo, casi negro, que crea un contraste impactante con el cuerpo terracota.",
-                          "lineHeight": 1.8,
+                          "lineHeight": 1.7,
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -2527,7 +2550,7 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "La textura de la pieza es dinámica y rítmica, lograda mediante el tallado de los rollitos que la componen, formando un patrón continuo que amplifica la sensación de movimiento en la obra. La cocción a 1180°C en un ambiente de oxidación asegura la solidez del material.",
-                          "lineHeight": 1.8,
+                          "lineHeight": 1.7,
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -2581,7 +2604,7 @@
                   "layout": "vertical",
                   "gap": 16,
                   "padding": [
-                    24,
+                    16,
                     0,
                     0,
                     0
@@ -2601,13 +2624,14 @@
                       "name": "CTA Content",
                       "width": "fill_container",
                       "layout": "vertical",
-                      "gap": 16,
+                      "gap": 12,
                       "padding": [
-                        16,
+                        12,
                         0,
                         0,
                         0
                       ],
+                      "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
@@ -2615,8 +2639,9 @@
                           "name": "ctaText",
                           "fill": "$text-secondary",
                           "content": "¿Te interesa esta pieza? Consulta disponibilidad y precio.",
+                          "textAlign": "center",
                           "fontFamily": "Inter",
-                          "fontSize": 14,
+                          "fontSize": 15,
                           "fontWeight": "normal"
                         },
                         {
@@ -2696,6 +2721,979 @@
               "name": "closeIcon",
               "width": 24,
               "height": 24,
+              "iconFontName": "x",
+              "iconFontFamily": "lucide",
+              "fill": "$cream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "tB1BC",
+      "x": 4620,
+      "y": 0,
+      "name": "Modal Tablet",
+      "clip": true,
+      "width": 768,
+      "height": 1024,
+      "fill": "#1A1512F2",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "QzuBh",
+          "x": 30,
+          "y": 30,
+          "name": "Modal Content Tablet",
+          "clip": true,
+          "width": 708,
+          "height": 964,
+          "fill": "$bg-clay",
+          "cornerRadius": 16,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#4A403540"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000080",
+            "offset": {
+              "x": 0,
+              "y": 24
+            },
+            "blur": 64
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "SKzNa",
+              "name": "Image Section Tablet",
+              "width": "fill_container",
+              "height": 520,
+              "cornerRadius": 12,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cQq5r",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Main Image Tablet",
+                  "width": 660,
+                  "height": 520,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1769619865227.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 12,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "M62Ta",
+                  "x": 300,
+                  "y": 340,
+                  "name": "Image Counter Tablet",
+                  "fill": "#1A1512CC",
+                  "cornerRadius": 14,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ymbDc",
+                      "name": "counterText",
+                      "fill": "$cream",
+                      "content": "1 / 6",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qLkzU",
+              "name": "Thumbnail Row Tablet",
+              "width": "fill_container",
+              "height": 64,
+              "gap": 12,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "19bdy",
+                  "name": "Nav Left Tablet",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#2A241F80",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$terracotta"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "QVEIe",
+                      "name": "navLeftIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "chevron-left",
+                      "iconFontFamily": "lucide",
+                      "fill": "$cream"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6ZHla",
+                  "name": "Thumb 1",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "imagedealer",
+                    "link": "https://unsplash.com/@imagedealer",
+                    "author": "Taya Kucherova"
+                  },
+                  "width": 48,
+                  "height": 64,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1662845114342-256fdc45981d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk2MTk4NjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 6,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "$terracotta"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "6S59H",
+                  "name": "Thumb 2",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "90ml_water",
+                    "link": "https://unsplash.com/@90ml_water",
+                    "author": "Avinash Narnaware"
+                  },
+                  "width": 48,
+                  "height": 64,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1744893497803-4631294c3a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk2MTk4NjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 6,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "46mY6",
+                  "name": "Thumb 3",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "yuvalz",
+                    "link": "https://unsplash.com/@yuvalz",
+                    "author": "Yuval Zukerman"
+                  },
+                  "width": 48,
+                  "height": 64,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1632775468268-39dff4c2aa28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk2MTk4Njd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 6,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "UG6Sc",
+                  "name": "Thumb 4",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "lauratommphoto",
+                    "link": "https://unsplash.com/@lauratommphoto",
+                    "author": "Laura Tommasina"
+                  },
+                  "width": 48,
+                  "height": 64,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1764507768733-667e135d8cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njk2MTk4Njd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 6,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#4A403540"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "N3znP",
+                  "name": "Nav Right Tablet",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#2A241F80",
+                  "cornerRadius": 16,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "$terracotta"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "YA6FX",
+                      "name": "navRightIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "$cream"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VJG7i",
+              "name": "Info Section Tablet",
+              "clip": true,
+              "width": "fill_container",
+              "height": 200,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "44rHI",
+                  "name": "Scroll Indicator Tablet",
+                  "width": 48,
+                  "height": 3,
+                  "fill": "$terracotta",
+                  "cornerRadius": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "KtCBD",
+                  "name": "Header Row Tablet",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DPOSW",
+                      "name": "pieceLabel",
+                      "fill": "$terracotta",
+                      "content": "PIEZA ÚNICA",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "3vIWA",
+                      "name": "Title Tablet",
+                      "fill": "$cream",
+                      "content": "Manganerhythmus spiralinex",
+                      "fontFamily": "Cormorant Garamond",
+                      "fontSize": 24,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "cBAuV",
+                      "name": "Meta Row Tablet",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LtDVH",
+                          "name": "yearText",
+                          "fill": "$text-secondary",
+                          "content": "2024",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "vPAdX",
+                          "name": "originText",
+                          "fill": "$text-secondary",
+                          "content": "Dinamarca",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cz0wY",
+                          "name": "sizeText",
+                          "fill": "$text-secondary",
+                          "content": "26 × 22 × 18 cm",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a8ARX",
+                  "name": "Divider 1",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#4A403540"
+                },
+                {
+                  "type": "frame",
+                  "id": "Dd1kh",
+                  "name": "Description Section Tablet",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gDsdg",
+                      "name": "descLabel",
+                      "fill": "$terracotta",
+                      "content": "DESCRIPCIÓN",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "MXscE",
+                      "name": "Description Text Tablet",
+                      "fill": "$text-secondary",
+                      "content": "Esta pieza escultórica, elaborada mediante la técnica de rollos, presenta un diseño orgánico y fluido que combina trazos de gres ferruginoso con esmalte mate sutil. La forma evoca la dinámica espiral de la naturaleza.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eFlRR",
+              "name": "CTA Section Tablet",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                16,
+                0,
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SObp1",
+                  "name": "CTA Divider",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#4A403540"
+                },
+                {
+                  "type": "frame",
+                  "id": "gXMYt",
+                  "name": "CTA Content Tablet",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    12,
+                    0,
+                    0,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qgX9j",
+                      "name": "ctaText",
+                      "fill": "$text-secondary",
+                      "content": "¿Te interesa esta pieza? Consulta disponibilidad y precio.",
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qkJF8",
+                      "name": "WhatsApp Button Tablet",
+                      "width": "fill_container",
+                      "fill": "#25D366",
+                      "cornerRadius": 8,
+                      "gap": 10,
+                      "padding": [
+                        14,
+                        24
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "qr5Nm",
+                          "name": "waIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "message-circle",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xrhka",
+                          "name": "waText",
+                          "fill": "#FFFFFF",
+                          "content": "Solicitar información por WhatsApp",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9crzr",
+          "x": 700,
+          "y": 16,
+          "name": "Close Button Tablet",
+          "width": 48,
+          "height": 48,
+          "fill": "#1A1512E6",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$terracotta"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000060",
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "blur": 16
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "piQfo",
+              "name": "closeIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "x",
+              "iconFontFamily": "lucide",
+              "fill": "$cream"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "R7ItH",
+      "x": 5488,
+      "y": 0,
+      "name": "Modal Mobile",
+      "clip": true,
+      "width": 375,
+      "height": 812,
+      "fill": "$bg-earth",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "fYw2s",
+          "x": 0,
+          "y": 0,
+          "name": "Image Container Mobile",
+          "width": 375,
+          "height": 450,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "CBSNs",
+              "x": 0,
+              "y": 0,
+              "name": "Main Image Mobile",
+              "width": 375,
+              "height": 450,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1769619942962.png",
+                "mode": "fill"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "iAx3t",
+              "x": 16,
+              "y": 220,
+              "name": "Swipe Hint",
+              "fill": "#1A151280",
+              "cornerRadius": 12,
+              "gap": 6,
+              "padding": [
+                6,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "FABTM",
+                  "name": "swipeIcon",
+                  "width": 14,
+                  "height": 14,
+                  "iconFontName": "move-horizontal",
+                  "iconFontFamily": "lucide",
+                  "fill": "$cream"
+                },
+                {
+                  "type": "text",
+                  "id": "1QmZ9",
+                  "name": "swipeText",
+                  "fill": "$cream",
+                  "content": "Desliza",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RdXJA",
+              "x": 160,
+              "y": 410,
+              "name": "Image Counter Mobile",
+              "fill": "#1A1512CC",
+              "cornerRadius": 14,
+              "padding": [
+                0,
+                0,
+                8,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KECxw",
+                  "name": "counterText",
+                  "fill": "$cream",
+                  "content": "1 / 6",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "gB21V",
+          "x": 0,
+          "y": 450,
+          "name": "Content Area Mobile",
+          "clip": true,
+          "width": 375,
+          "height": 270,
+          "fill": "$bg-clay",
+          "cornerRadius": [
+            20,
+            20,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "DtueB",
+              "name": "Scroll Hint Row",
+              "width": "fill_container",
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cziy4",
+                  "name": "Scroll Bar",
+                  "width": 36,
+                  "height": 3,
+                  "fill": "$terracotta",
+                  "cornerRadius": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CGo9n",
+              "name": "Swipe Dots Row",
+              "width": "fill_container",
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "of7V0",
+                  "name": "dot1",
+                  "width": 8,
+                  "height": 8,
+                  "fill": "$terracotta",
+                  "cornerRadius": 4
+                },
+                {
+                  "type": "frame",
+                  "id": "tkVt7",
+                  "name": "dot2",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "#4A403580",
+                  "cornerRadius": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "nLeHJ",
+                  "name": "dot3",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "#4A403580",
+                  "cornerRadius": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "GmKay",
+                  "name": "dot4",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "#4A403580",
+                  "cornerRadius": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "eJI4F",
+                  "name": "dot5",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "#4A403580",
+                  "cornerRadius": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "nCbsK",
+                  "name": "dot6",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "#4A403580",
+                  "cornerRadius": 3
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lRcog",
+              "name": "Header Mobile",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DaUKC",
+                  "name": "labelMobile",
+                  "fill": "$terracotta",
+                  "content": "PIEZA ÚNICA",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.5
+                },
+                {
+                  "type": "text",
+                  "id": "5sqVA",
+                  "name": "Title Mobile",
+                  "fill": "$cream",
+                  "content": "Manganerhythmus spiralinex",
+                  "fontFamily": "Cormorant Garamond",
+                  "fontSize": 20,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "t6g7t",
+                  "name": "Meta Mobile",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "A9qfX",
+                      "name": "yearMobile",
+                      "fill": "$text-secondary",
+                      "content": "2024",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UmP6B",
+                      "name": "originMobile",
+                      "fill": "$text-secondary",
+                      "content": "Dinamarca",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mJltR",
+                      "name": "sizeMobile",
+                      "fill": "$text-secondary",
+                      "content": "26×22×18 cm",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EqLpN",
+              "name": "Divider Mobile",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#4A403540"
+            },
+            {
+              "type": "frame",
+              "id": "2gP2X",
+              "name": "Description Mobile",
+              "clip": true,
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Tty3K",
+                  "name": "descLabelMobile",
+                  "fill": "$terracotta",
+                  "content": "DESCRIPCIÓN",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.5
+                },
+                {
+                  "type": "text",
+                  "id": "udanB",
+                  "name": "Description Text Mobile",
+                  "fill": "$text-secondary",
+                  "content": "Esta pieza escultórica, elaborada mediante la técnica de rollos, presenta un diseño orgánico y fluido que combina trazos de gres ferruginoso con esmalte mate sutil. La forma evoca la dinámica espiral de la naturaleza.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jJ8eD",
+          "x": 0,
+          "y": 720,
+          "name": "CTA Fixed Bottom",
+          "width": 375,
+          "height": 92,
+          "fill": "$bg-clay",
+          "stroke": {
+            "thickness": 1,
+            "fill": "#4A403540"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000040",
+            "offset": {
+              "x": 0,
+              "y": -8
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            12,
+            16,
+            28,
+            16
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "A4c8M",
+              "name": "ctaTextMobile",
+              "fill": "$text-secondary",
+              "content": "¿Te interesa esta pieza?",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "Oc6Mj",
+              "name": "WhatsApp Button Mobile",
+              "width": "fill_container",
+              "fill": "#25D366",
+              "cornerRadius": 12,
+              "gap": 10,
+              "padding": [
+                14,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "aqHSD",
+                  "name": "waIconMobile",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "message-circle",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "cYcH5",
+                  "name": "waTextMobile",
+                  "fill": "#FFFFFF",
+                  "content": "Consultar por WhatsApp",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "7Qpqb",
+          "x": 315,
+          "y": 12,
+          "name": "Close Button Mobile",
+          "width": 48,
+          "height": 48,
+          "fill": "#1A1512E6",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$terracotta"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000060",
+            "offset": {
+              "x": 0,
+              "y": 6
+            },
+            "blur": 16
+          },
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "IyYEg",
+              "name": "closeIcon",
+              "width": 20,
+              "height": 20,
               "iconFontName": "x",
               "iconFontFamily": "lucide",
               "fill": "$cream"
