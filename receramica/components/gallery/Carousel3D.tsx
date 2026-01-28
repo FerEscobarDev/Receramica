@@ -68,7 +68,7 @@ export function Carousel3D({
     <div className={cn("relative", className)}>
       {/* Main Carousel Container */}
       <div
-        className="relative h-[480px] md:h-[540px] lg:h-[580px] mb-12 select-none"
+        className="relative h-[380px] sm:h-[480px] md:h-[540px] lg:h-[580px] mb-8 sm:mb-12 select-none overflow-hidden"
         onMouseEnter={pauseAutoplay}
         onMouseLeave={() => {
           if (isDragging) handleTouchEnd();

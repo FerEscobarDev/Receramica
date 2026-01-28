@@ -57,11 +57,11 @@ export function GallerySection() {
 
         {/* Carousel Container */}
         {isLoading ? (
-          <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12">
+          <div className="h-[380px] sm:h-[480px] md:h-[540px] lg:h-[580px] mb-8 sm:mb-12">
             <CarouselSkeleton />
           </div>
         ) : error ? (
-          <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12 flex items-center justify-center">
+          <div className="h-[380px] sm:h-[480px] md:h-[540px] lg:h-[580px] mb-8 sm:mb-12 flex items-center justify-center">
             <p className="text-text-secondary">{t("errorLoading")}</p>
           </div>
         ) : images.length > 0 ? (
@@ -72,7 +72,7 @@ export function GallerySection() {
             autoplayInterval={5000}
           />
         ) : (
-          <div className="h-[400px] md:h-[450px] lg:h-[500px] mb-12 flex items-center justify-center">
+          <div className="h-[380px] sm:h-[480px] md:h-[540px] lg:h-[580px] mb-8 sm:mb-12 flex items-center justify-center">
             <p className="text-text-secondary">{t("noImages")}</p>
           </div>
         )}
